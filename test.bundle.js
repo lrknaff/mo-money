@@ -66,6 +66,8 @@
 /***/ 3:
 /***/ function(module, exports) {
 
+	'use strict';
+
 	// shim for using process in browser
 	var process = module.exports = {};
 
@@ -303,6 +305,8 @@
 
 /***/ 175:
 /***/ function(module, exports) {
+
+	"use strict";
 
 	/*
 		MIT License http://www.opensource.org/licenses/mit-license.php
@@ -642,7 +646,7 @@
 /***/ 180:
 /***/ function(module, exports) {
 
-	
+	"use strict";
 
 /***/ },
 
