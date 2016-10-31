@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import $ from 'jquery';
 
 export default class Quote extends Component {
   constructor() {
@@ -11,7 +11,6 @@ export default class Quote extends Component {
   }
 
   render() {
-
 
     return (
         <h4 className='quote-text'>
