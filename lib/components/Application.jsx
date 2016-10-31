@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { pick, map, extend, filter} from 'lodash';
 import moment from 'moment';
 import firebase, { reference, signIn, signOut } from '../firebase';
-// import firebase, { reference, signIn, signOut } from '../firebase';
+import Quote from './Quote';
 
 export default class Application extends Component {
   constructor() {
@@ -23,7 +23,6 @@ export default class Application extends Component {
 
     return (
       <div>
-        <h1>Hello World!</h1>
       <section className='sign-in-out'>
         <div className='active-user'>
         {user ?
@@ -32,11 +31,14 @@ export default class Application extends Component {
             onClick={() => signOut()}>
             Sign Out
           </button> :
-          <button
-            className='sign-in-button'
-            onClick={() => signIn()}>
-            Sign In
-          </button>
+          <article className='quote-container'>
+            <Quote />
+            <button
+              className='sign-in-button'
+              onClick={() => signIn()}>
+              Sign In
+            </button>
+          </article>
         }
         </div>
       </section>
