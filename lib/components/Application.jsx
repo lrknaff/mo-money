@@ -23,25 +23,26 @@ export default class Application extends Component {
 
     return (
       <div>
-      <section className='sign-in-out'>
-        <div className='active-user'>
-        {user ?
-          <button
-            className='sign-out-button'
-            onClick={() => signOut()}>
-            Sign Out
-          </button> :
-          <article className='quote-container'>
-            <Quote />
+        <section className='sign-in-out'>
+          <div className='active-user'>
+          {user ?
             <button
-              className='sign-in-button'
-              onClick={() => signIn()}>
-              Sign In
-            </button>
-          </article>
-        }
-        </div>
-      </section>
+              className='sign-out-button'
+              onClick  ={ () => signOut() }>
+              Sign Out
+            </button> :
+
+            <article className='sign-in-container'>
+              <Quote />
+              <button
+                className='sign-in-button'
+                onClick  ={ () => signIn() }>
+                Sign In
+              </button>
+            </article>
+          }
+          </div>
+        </section>
       </div>
     )
   }

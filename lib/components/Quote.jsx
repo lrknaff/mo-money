@@ -12,7 +12,6 @@ export default class Quote extends Component {
 
   render() {
 
-
     return (
         <h4 className='quote-text'>
           {this.state.quote}< br/>
