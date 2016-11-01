@@ -1,6 +1,11 @@
 /* Sign In */
 .sign-in-container {
-  background: url('/lib/images/nyc.jpg') no-repeat center center fixed;
+  background: linear-gradient(-15deg, rgba(1, 87, 155, 0.8), rgba(33, 150, 243, 0.7)),
+              url('/lib/images/nyc.jpg')
+              no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   height: 100vh;
 }

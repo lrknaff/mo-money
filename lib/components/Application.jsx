@@ -32,6 +32,7 @@ export default class Application extends Component {
           </button> :
 
           <div className='sign-in-container'>
+            {/* <img src='../lib/images/logo.svg' /> */}
             <Quote />
             <button
               className='sign-in-button'
