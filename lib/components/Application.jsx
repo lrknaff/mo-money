@@ -24,24 +24,26 @@ export default class Application extends Component {
     return (
       <div>
         <section className='sign-in-out'>
-          <div className='active-user'>
-          {user ?
-            <button
-              className='sign-out-button'
-              onClick  ={ () => signOut() }>
-              Sign Out
-            </button> :
+        {user ?
+          <button
+            className='sign-out-button'
+            onClick  ={ () => signOut() }>
+            Sign Out
+          </button> :
 
-            <article className='sign-in-container'>
-              <Quote />
-              <button
-                className='sign-in-button'
-                onClick  ={ () => signIn() }>
-                Sign In
-              </button>
-            </article>
-          }
+          <div className='sign-in-container'>
+            <a href='/public' className='sign-in-logo'>
+              MoMoney Logo
+            </a>
+            {/* <img src='../lib/images/logo.svg' /> */}
+            <Quote />
+            <button
+              className='sign-in-button'
+              onClick  ={ () => signIn() }>
+              Sign In
+            </button>
           </div>
+        }
         </section>
       </div>
     )
