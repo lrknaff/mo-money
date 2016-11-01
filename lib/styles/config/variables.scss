@@ -22,3 +22,9 @@ $dark-grey: #616161;
   -moz-linear-gradient: $offsetX $offsetY $blur $color;
   box-shadow: $offsetX $offsetY $blur $color;
 }
+
+@mixin make-darker ($color) {
+  
+}
+
+/* Function */

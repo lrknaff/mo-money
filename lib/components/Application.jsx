@@ -32,6 +32,9 @@ export default class Application extends Component {
           </button> :
 
           <div className='sign-in-container'>
+            <a href='/public' className='sign-in-logo'>
+              MoMoney Logo
+            </a>
             {/* <img src='../lib/images/logo.svg' /> */}
             <Quote />
             <button

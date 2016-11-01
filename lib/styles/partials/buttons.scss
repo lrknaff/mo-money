@@ -3,15 +3,20 @@ button {
   border: none;
   border-radius: 50px;
   color: #FFF;
-  height: 50px;
   font-family: $main-font;
   font-weight: 300;
   font-size: 18px;
-  width: 167px;
+  padding: 11px 40px;
   @include box-shadow(0, 1px, 1px, rgba(0,0,0,0.24));
 
   &.sign-in-button {
     background: #FFF;
     color: $main-blue;
+
+    &:hover {
+      background: #EEE;
+      transition: .2s;
+    }
   }
+
 }

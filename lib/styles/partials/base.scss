@@ -1,3 +1,7 @@
+body {
+  text-align: center;
+}
+
 /* Sign In */
 .sign-in-container {
   background: linear-gradient(-15deg, rgba(1, 87, 155, 0.8), rgba(33, 150, 243, 0.7)),
@@ -8,4 +12,24 @@
   -o-background-size: cover;
   background-size: cover;
   height: 100vh;
+}
+
+.sign-in-logo {
+  display: block;
+  text-indent: -9999px;
+  margin: 0 auto;
+  width: 220px;
+  height: 150px;
+  background: url('/lib/images/logo.svg') no-repeat;
+  background-size: 220px 150px;
+}
+
+.quote-text {
+  padding: 0 10%;
+  margin-top: 30vh;
+}
+
+.quote-text .author-text {
+  display: block;
+  margin: 15px 0;
 }
