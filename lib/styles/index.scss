@@ -1,13 +1,2 @@
 @import '/config/all.scss';
-@import '/config/all.scss';
-
-
-body {
-  width: 60%;
-  margin: auto;
-
-  text-align: center;
-  font-size: 100px;
-  font-family: $main-font;
-  font-weight: 400;
-}
+@import '/partials/all.scss';
