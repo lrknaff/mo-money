@@ -1,0 +1,30 @@
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400italic,600,800);
+$main-font: 'Open Sans', sans-serif;
+
+/* Colors */
+$main-blue: #32A2F2;
+$light-grey: #E9EBEC;
+$medium-grey: #9E9E9E;
+$dark-grey: #616161;
+
+/* Mixins */
+@mixin background-gradient-overlay ($angle, $color1, $color2, $color3) {
+  background: $main-blue;
+  background: -webkit-linear-gradient($angle, $color1, $color2, $color3);
+  background: -o-linear-gradient($angle, $color1, $color2, $color3);
+  background: -moz-linear-gradient($angle, $color1, $color2, $color3);
+  background: linear-gradient($angle, $color1, $color2, $color3);
+}
+
+@mixin box-shadow ($offsetX, $offsetY, $blur, $color) {
+  -webkit-linear-box-shadow: $offsetX $offsetY $blur $color;
+  -moz-linear-gradient: $offsetX $offsetY $blur $color;
+  box-shadow: $offsetX $offsetY $blur $color;
+}
+
+@mixin make-darker ($color) {
+  
+}
+
+/* Function */
