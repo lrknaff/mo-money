@@ -3,6 +3,7 @@ import { pick, map, extend, filter} from 'lodash';
 import moment from 'moment';
 import firebase, { reference, signIn, signOut } from '../firebase';
 import CardComponent from '../components/CardComponent';
+import InputContainer from '../containers/InputContainer';
 
 export default class SignedInContainer extends Component {
   constructor() {
@@ -12,11 +13,7 @@ export default class SignedInContainer extends Component {
     }
   }
 
-
-
   render() {
-
-
 
     return (
       <div className='signed-in-container'>
@@ -24,6 +21,7 @@ export default class SignedInContainer extends Component {
         </header>
 
         <main className='signed-in-body'>
+        <InputContainer />
         {this.state.cardsArray.map( card => <CardComponent
           key={card.key}
           jobTitle={card.jobTitle}
