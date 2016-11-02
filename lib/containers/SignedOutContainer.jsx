@@ -5,12 +5,6 @@ import firebase, { reference, signIn, signOut } from '../firebase';
 import Quote from '../components/Quote';
 
 export default class SignedOutContainer extends Component {
-  constructor() {
-    super();
-    this.state = {
-
-    }
-  }
 
   render() {
 

@@ -23,12 +23,12 @@ export default class Application extends Component {
     const user = this.state.user;
 
     return (
-        <main className='sign-in-out'>
+        <div className='sign-in-out'>
         {user ?
           <SignedInContainer /> :
           <SignedOutContainer />
         }
-        </main>
+        </div>
     )
   }
 }
