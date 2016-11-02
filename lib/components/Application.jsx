@@ -24,31 +24,38 @@ export default class Application extends Component {
 
     return (
       <div>
-        <section className='sign-in-out'>
+        <main className='sign-in-out'>
+
         {user ?
-          <button
-            className='sign-out-button'
-            onClick  ={ () => signOut() }>
-            Sign Out
-          </button> :
+          <section className='signed-in-container'>
+            <header className='signed-in-header'>
 
-          <div className='sign-in-container'>
+            </header>
+            <button
+              className='sign-out-button waves-effect waves-light'
+              onClick  ={ () => signOut() }>
+              Sign Out
+            </button>
+          </section>
 
+          :
+
+          <section className='sign-in-container'>
             <div className='sign-in-logo-container'>
               <a href='/public' className='sign-in-logo'>
                 MoMoney Logo
               </a>
             </div>
-            {/* <img src='../lib/images/logo.svg' /> */}
             <Quote />
             <button
               className='sign-in-button waves-effect waves-light btn'
               onClick  ={ () => signIn() }>
               Sign In
             </button>
-          </div>
+          </section>
         }
-        </section>
+
+        </main>
       </div>
     )
   }
