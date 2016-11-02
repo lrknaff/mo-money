@@ -75,8 +75,15 @@ describe('Calc Tests: ', () => {
       assert.equal(stateTax, 1232.50)
     })
 
-    it('should return a value of 2400.00 for total stateTax', () => {
-      assert.equal()
-    }
+    it('should return a value of 1296.00 for total stateTax', () => {
+      var commuteExpense = Calc.commuteExpense(milesToWork)
+      assert.equal(commuteExpense, 1296.00 )
+    })
+
+    it('should return a value of 2400.00 for a total for health insurance', () => {
+      var healthInsuranceExpense = Calc.healthInsuranceExpense(healthInsurancePremium)
+      assert.equal(healthInsuranceExpense, 2400.00)
+    })
+
   })
 });
