@@ -32,7 +32,7 @@ export default class Application extends Component {
 
             </header>
             <button
-              className='sign-out-button waves-effect waves-light'
+              className='sign-out-button waves-effect'
               onClick  ={ () => signOut() }>
               Sign Out
             </button>
@@ -48,7 +48,7 @@ export default class Application extends Component {
             </div>
             <Quote />
             <button
-              className='sign-in-button waves-effect waves-light btn'
+              className='sign-in-button waves-effect'
               onClick  ={ () => signIn() }>
               Sign In
             </button>
