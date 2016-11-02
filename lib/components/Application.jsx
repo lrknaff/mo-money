@@ -5,6 +5,7 @@ import moment from 'moment';
 import firebase, { reference, signIn, signOut } from '../firebase';
 import Quote from './Quote';
 
+
 export default class Application extends Component {
   constructor() {
     super();
@@ -23,28 +24,38 @@ export default class Application extends Component {
 
     return (
       <div>
-        <section className='sign-in-out'>
-        {user ?
-          <button
-            className='sign-out-button'
-            onClick  ={ () => signOut() }>
-            Sign Out
-          </button> :
+        <main className='sign-in-out'>
 
-          <div className='sign-in-container'>
-            <a href='/public' className='sign-in-logo'>
-              MoMoney Logo
-            </a>
-            {/* <img src='../lib/images/logo.svg' /> */}
+        {user ?
+          <section className='signed-in-container'>
+            <header className='signed-in-header'>
+
+            </header>
+            <button
+              className='sign-out-button waves-effect'
+              onClick  ={ () => signOut() }>
+              Sign Out
+            </button>
+          </section>
+
+          :
+
+          <section className='sign-in-container'>
+            <div className='sign-in-logo-container'>
+              <a href='/public' className='sign-in-logo'>
+                MoMoney Logo
+              </a>
+            </div>
             <Quote />
             <button
-              className='sign-in-button'
+              className='sign-in-button waves-effect'
               onClick  ={ () => signIn() }>
               Sign In
             </button>
-          </div>
+          </section>
         }
-        </section>
+
+        </main>
       </div>
     )
   }
