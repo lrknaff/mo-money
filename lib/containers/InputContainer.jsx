@@ -69,17 +69,6 @@ export default class InputContainer extends Component {
           <label>Distance from home</label>
         </div>
 
-        <div className='input-form-radio'>
-          <p>Lunch</p>
-            <InputComponent className='input-form-lunch' type='radio' /> Y
-            <InputComponent className='input-form-beer' type='radio' /> N
-        </div>
-
-        <div className='input-form-container'>
-          <p>Beer/Wine</p>
-            <InputComponent className='input-form-lunch' type='radio' /> Y
-            <InputComponent className='input-form-beer' type='radio' /> N
-        </div>
 
         <button
           className='submit-button waves-effect'>
