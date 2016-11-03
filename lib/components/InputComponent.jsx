@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import firebase, { reference, signIn, signOut } from '../firebase';
+import React, { Component } from 'react'
+import firebase, { reference, signIn, signOut } from '../firebase'
 
 
 export default class InputComponent extends Component {
