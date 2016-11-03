@@ -82,9 +82,19 @@ describe('Calc Tests: ', () => {
       assert.equal(ssiTax, 1232.50)
     })
 
-    it('should return a value of 7998.50 for total State tax', () => {
+    it('should return a value of 7998.50 for total State tax Denver', () => {
       var stateTax = Calc.stateTax(annualSalary, annualBonus, cityDenver)
       assert.equal(stateTax, 7998.50)
+    })
+
+    it('should return a value of 7998.50 for total State tax San Francisco', () => {
+      var stateTax = Calc.stateTax(annualSalary, annualBonus, citySanFrancisco)
+      assert.equal(stateTax, 7480)
+    })
+
+    it('should return a value of 7998.50 for total State tax New York City', () => {
+      var stateTax = Calc.stateTax(annualSalary, annualBonus, cityNYC)
+      assert.equal(stateTax, 11373)
     })
 
     it('should return a value of 1296.00 for total transportation costs', () => {
@@ -121,7 +131,8 @@ describe('Calc Tests: ', () => {
         lunch,
         beer,
         milesToWork,
-        healthInsurancePremium)
+        healthInsurancePremium,
+        cityDenver)
       assert.equal(netIncomeAndBenefits, 58939.25)
     })
 
@@ -139,29 +150,29 @@ describe('Calc Tests: ', () => {
     })
 
     it('should return a value of 48919.58 when the city is San Francisco', () => {
-    var costOfLivingCalculation = Calc.costOfLivingCalculation(
-      annualSalary,
-      annualBonus,
-      match401k,
-      lunch,
-      beer,
-      milesToWork,
-      healthInsurancePremium,
-      citySanFrancisco)
-      assert.equal(costOfLivingCalculation, 48919.58)
+      var costOfLivingCalculation = Calc.costOfLivingCalculation(
+        annualSalary,
+        annualBonus,
+        match401k,
+        lunch,
+        beer,
+        milesToWork,
+        healthInsurancePremium,
+        citySanFrancisco)
+      assert.equal(costOfLivingCalculation, 49349.93)
     })
 
     it('should return a value of 45383.22 when the city is New York City', () => {
-    var costOfLivingCalculation = Calc.costOfLivingCalculation(
-      annualSalary,
-      annualBonus,
-      match401k,
-      lunch,
-      beer,
-      milesToWork,
-      healthInsurancePremium,
-      cityNYC)
-      assert.equal(costOfLivingCalculation, 45383.22)
+      var costOfLivingCalculation = Calc.costOfLivingCalculation(
+        annualSalary,
+        annualBonus,
+        match401k,
+        lunch,
+        beer,
+        milesToWork,
+        healthInsurancePremium,
+        cityNYC)
+      assert.equal(costOfLivingCalculation, 42784.86)
     })
 
   })
