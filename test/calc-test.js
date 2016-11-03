@@ -14,7 +14,9 @@ describe('Calc Tests: ', () => {
   var healthInsurancePremium = 200
   var milesToWork = 5
   var company = 'CaptianU'
-  var city = 'Denver'
+  var cityDenver = 'Denver'
+  var citySanFrancisco = 'San Francisco'
+  var cityNYC = 'New York City'
 
   var totalIncome = Calc.totalIncome(annualSalary, annualBonus)
   var total401kMatch = Calc.total401kMatch(totalIncome, match401k)
@@ -65,9 +67,9 @@ describe('Calc Tests: ', () => {
   })
 
   describe('Costs:', () => {
-    it('should return a value of 21250 for total federal income tax', () => {
+    it('should return a value of 17021.25 for total federal income tax', () => {
       var federalIncomeTax = Calc.federalIncomeTax(annualSalary, annualBonus)
-      assert.equal(federalIncomeTax, 21250)
+      assert.equal(federalIncomeTax,  17021.25 )
     })
 
     it('should return a value of 6502.50 for total ssi Tax', () => {
@@ -75,17 +77,17 @@ describe('Calc Tests: ', () => {
       assert.equal(ssiTax, 6502.50)
     })
 
-    it('should return a value of 1232.50 for total ssi tax', () => {
+    it('should return a value of 1232.50 for total medicare tax', () => {
       var ssiTax = Calc.medicareTax(annualSalary, annualBonus)
       assert.equal(ssiTax, 1232.50)
     })
 
-    it('should return a value of 7998.50 for total ssi tax', () => {
-      var stateTax = Calc.medicareTax(annualSalary, annualBonus)
-      assert.equal(stateTax, 1232.50)
+    it('should return a value of 7998.50 for total State tax', () => {
+      var stateTax = Calc.stateTax(annualSalary, annualBonus, cityDenver)
+      assert.equal(stateTax, 7998.50)
     })
 
-    it('should return a value of 1296.00 for total stateTax', () => {
+    it('should return a value of 1296.00 for total transportation costs', () => {
       var commuteExpense = Calc.commuteExpense(milesToWork)
       assert.equal(commuteExpense, 1296.00 )
     })
@@ -103,8 +105,63 @@ describe('Calc Tests: ', () => {
         lunch,
         beer,
         milesToWork,
+        healthInsurancePremium,
+        cityDenver)
+      assert.equal(totalCosts, 36450.75)
+    })
+  })
+
+  describe('Income, benefits, costs, and cost of living adjustment:', () => {
+
+    it('should return a value of 58939.25 after deducting costs from income and benefits', () => {
+      var netIncomeAndBenefits = Calc.netIncomeAndBenefits(
+        annualSalary,
+        annualBonus,
+        match401k,
+        lunch,
+        beer,
+        milesToWork,
         healthInsurancePremium)
-      assert.equal()
+      assert.equal(netIncomeAndBenefits, 58939.25)
+    })
+
+    it('should return a value of 58939.25 when the city is Denver', () => {
+    var costOfLivingCalculation = Calc.costOfLivingCalculation(
+      annualSalary,
+      annualBonus,
+      match401k,
+      lunch,
+      beer,
+      milesToWork,
+      healthInsurancePremium,
+      cityDenver)
+      assert.equal(costOfLivingCalculation, 58939.25)
+    })
+
+    it('should return a value of 48919.58 when the city is San Francisco', () => {
+    var costOfLivingCalculation = Calc.costOfLivingCalculation(
+      annualSalary,
+      annualBonus,
+      match401k,
+      lunch,
+      beer,
+      milesToWork,
+      healthInsurancePremium,
+      citySanFrancisco)
+      assert.equal(costOfLivingCalculation, 48919.58)
+    })
+
+    it('should return a value of 45383.22 when the city is New York City', () => {
+    var costOfLivingCalculation = Calc.costOfLivingCalculation(
+      annualSalary,
+      annualBonus,
+      match401k,
+      lunch,
+      beer,
+      milesToWork,
+      healthInsurancePremium,
+      cityNYC)
+      assert.equal(costOfLivingCalculation, 45383.22)
     })
 
   })
