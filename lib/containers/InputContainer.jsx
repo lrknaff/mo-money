@@ -18,6 +18,8 @@ export default class InputContainer extends Component {
     return (
       <form className='input-form'>
 
+        <h2 className='input-form-main-title'>Add New Job Offer</h2>
+
         <div className='input-form-container'>
           <InputComponent className='input-form-title' type='text' />
           <span className="input-form-highlight"></span>

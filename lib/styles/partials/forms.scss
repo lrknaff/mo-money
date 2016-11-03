@@ -2,7 +2,10 @@
   box-sizing: border-box;
 }
 
+/* form base styling */
+
 .input-form {
+  border-top: 80px solid $main-blue;
   font-color: $medium-grey;
   font-family: $main-font;
   width: 600px;
@@ -11,6 +14,15 @@
   background: #FFF;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12),  0 3px 1px -2px rgba(0,0,0,0.2);
   padding: 10px 50px 50px;
+}
+
+.input-form-main-title {
+  color: #FFF;
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 45px;
+  position: relative;
+  top: -62px;
 }
 
 .input-form-container {
