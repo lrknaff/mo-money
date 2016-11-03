@@ -16,7 +16,11 @@ export default class SignedInContainer extends Component {
   render() {
     return (
       <div className="signed-in-container">
-        <header className="signed-in-header" />
+        <header className="signed-in-header">
+          <a href="/public" className="signed-in-logo">
+            MoMoney Logo
+          </a>
+        </header>
         <main className="signed-in-body">
           <InputContainer />
           {this.state.cardsArray.map(card =>
