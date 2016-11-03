@@ -1,5 +1,4 @@
-import { assert } from 'chai' //
-
+import { assert } from 'chai'
 import Calc from '../lib/utilities/calc'
 
 describe('Calc Tests: ', () => {
@@ -121,7 +120,6 @@ describe('Calc Tests: ', () => {
   })
 
   describe('Income, benefits, costs, and cost of living adjustment:', () => {
-
     it('should return a value of 58939.25 after deducting costs from income and benefits', () => {
       const netIncomeAndBenefits = Calc.netIncomeAndBenefits(
         annualSalary,
@@ -136,15 +134,15 @@ describe('Calc Tests: ', () => {
     })
 
     it('should return a value of 58939.25 when the city is Denver', () => {
-    const costOfLivingCalculation = Calc.costOfLivingCalculation(
-      annualSalary,
-      annualBonus,
-      match401k,
-      lunch,
-      beer,
-      milesToWork,
-      healthInsurancePremium,
-      cityDenver)
+      const costOfLivingCalculation = Calc.costOfLivingCalculation(
+        annualSalary,
+        annualBonus,
+        match401k,
+        lunch,
+        beer,
+        milesToWork,
+        healthInsurancePremium,
+        cityDenver)
       assert.equal(costOfLivingCalculation, 58939.25)
     })
 
@@ -173,6 +171,5 @@ describe('Calc Tests: ', () => {
         cityNYC)
       assert.equal(costOfLivingCalculation, 42784.86)
     })
-
   })
-});
+})
