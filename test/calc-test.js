@@ -47,9 +47,19 @@ describe('Calc Tests: ', () => {
     })
 
     it('should return a value of 95390 or 90950 for a total income and benefits', () => {
-      var totalIncomeAndBenefits = Calc.totalIncomeAndBenefits(annualSalary, annualBonus, match401k, lunch, beer)
+      var totalIncomeAndBenefits = Calc.totalIncomeAndBenefits(
+        annualSalary,
+        annualBonus,
+        match401k,
+        lunch,
+        beer)
       assert.equal(totalIncomeAndBenefits, 95390)
-      var totalIncomeAndBenefits = Calc.totalIncomeAndBenefits(annualSalary, annualBonus, match401k, lunchFalse, beerFalse)
+      var totalIncomeAndBenefits = Calc.totalIncomeAndBenefits(
+        annualSalary,
+        annualBonus,
+        match401k,
+        lunchFalse,
+        beerFalse)
       assert.equal(totalIncomeAndBenefits, 90950)
     })
   })
@@ -83,6 +93,18 @@ describe('Calc Tests: ', () => {
     it('should return a value of 2400.00 for a total for health insurance', () => {
       var healthInsuranceExpense = Calc.healthInsuranceExpense(healthInsurancePremium)
       assert.equal(healthInsuranceExpense, 2400.00)
+    })
+
+    it('should return a value of 40679.50 for a total of all costs', () => {
+      var totalCosts = Calc.totalCosts(
+        annualSalary,
+        annualBonus,
+        match401k,
+        lunch,
+        beer,
+        milesToWork,
+        healthInsurancePremium)
+      assert.equal()
     })
 
   })
