@@ -3,6 +3,7 @@
 }
 
 .input-form {
+  font-color: $medium-grey;
   font-family: $main-font;
   width: 600px;
   margin: 30px auto 0;
@@ -18,6 +19,7 @@
 }
 
 input {
+  font-color: $medium-grey;
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   display: block;
@@ -40,4 +42,83 @@ label {
   transition:0.2s ease all;
   -moz-transition:0.2s ease all;
   -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+
+input:focus ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: $main-blue;
+}
+
+
+/* bottom bars */
+
+.input-form-bar {
+  position: relative;
+  display: block;
+  width: 300px;
+}
+
+.input-form-bar:before, .input-form-bar:after 	{
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:$main-blue;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+.input-form-bar:before {
+  left:50%;
+}
+
+.input-form-bar:after {
+  right:50%;
+}
+
+/* active state */
+
+input:focus ~ .input-form-bar:before, input:focus ~ .input-form-bar:after {
+  width:50%;
+}
+
+
+/* highlight */
+
+.input-form-highlight {
+  position:absolute;
+  height:60%;
+  width:100px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active highlight */
+
+input:focus ~ .input-form-highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* animations */
+
+@-webkit-keyframes inputHighlighter {
+	from { background:$main-blue; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:$main-blue; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:$main-blue; }
+  to 	{ width:0; background:transparent; }
 }

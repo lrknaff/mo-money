@@ -20,50 +20,64 @@ export default class InputContainer extends Component {
 
         <div className='input-form-container'>
           <InputComponent className='input-form-title' type='text' />
+          <span className="input-form-highlight"></span>
+          <span className="input-form-bar"></span>
           <label>Company</label>
         </div>
 
         <div className='input-form-container'>
           <InputComponent className='input-form-location' type='text' />
+          <span className="input-form-highlight"></span>
+          <span className="input-form-bar"></span>
           <label>Location</label>
         </div>
 
         <div className='input-form-container'>
           <InputComponent className='input-form-salary' type='number' />
+          <span className="input-form-highlight"></span>
+          <span className="input-form-bar"></span>
           <label>Salary</label>
         </div>
 
         <div className='input-form-container'>
           <InputComponent className='input-form-bonus' type='number' />
+          <span className="input-form-highlight"></span>
+          <span className="input-form-bar"></span>
           <label>Bonus</label>
         </div>
 
         <div className='input-form-container'>
           <InputComponent className='input-form-401k' type='number' />
+          <span className="input-form-highlight"></span>
+          <span className="input-form-bar"></span>
           <label>401K match %</label>
         </div>
 
         <div className='input-form-container'>
           <InputComponent className='input-form-insurance' type='number' />
+          <span className="input-form-highlight"></span>
+          <span className="input-form-bar"></span>
           <label>Insurance</label>
         </div>
 
         <div className='input-form-container'>
           <InputComponent className='input-form-distance' type='number' />
+          <span className="input-form-highlight"></span>
+          <span className="input-form-bar"></span>
           <label>Distance from home</label>
         </div>
 
-          <form className='input-form-radio'>
+        <div className='input-form-radio'>
           <p>Lunch</p>
             <InputComponent className='input-form-lunch' type='radio' /> Y
             <InputComponent className='input-form-beer' type='radio' /> N
-          </form>
+        </div>
 
-          <form className='input-form-radio'>
+        <div className='input-form-container'>
           <p>Beer/Wine</p>
             <InputComponent className='input-form-lunch' type='radio' /> Y
             <InputComponent className='input-form-beer' type='radio' /> N
-          </form>
+        </div>
 
       </form>
     )
