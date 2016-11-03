@@ -13,6 +13,11 @@ export default class InputContainer extends Component {
     }
   }
 
+  addJobCard() {
+    // do rendery things
+    this.props.addJobToDB()
+  }
+
   render() {
     return (
       <form className="input-form">

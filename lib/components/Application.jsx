@@ -18,13 +18,17 @@ export default class Application extends Component {
     firebase.auth().onAuthStateChanged(user => this.setState({ user }))
   }
 
+  addJobToDB() {
+    console.log('trying to add job to DB')
+  }
+
   render() {
     const user = this.state.user
 
     return (
       <div className="sign-in-out">
         {user ?
-          <SignedInContainer /> :
+          <SignedInContainer addJobToDB={this.addJobToDB.bind(this)} /> :
           <SignedOutContainer /> // eslint-disable-line
         }
       </div>

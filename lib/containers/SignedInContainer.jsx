@@ -18,7 +18,7 @@ export default class SignedInContainer extends Component {
       <div className="signed-in-container">
         <header className="signed-in-header" />
         <main className="signed-in-body">
-          <InputContainer />
+          <InputContainer addJobToDB={this.props.addJobToDB} />
           {this.state.cardsArray.map(card =>
             <CardComponent
               key={card.key}
