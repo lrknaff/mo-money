@@ -39,3 +39,16 @@ body {
 }
 
 /* Signed In */
+.sign-in-logo-container {
+  padding-top: 10px;
+}
+
+.signed-in-logo {
+  display: block;
+  text-indent: -9999px;
+  margin-left: 70px;
+  width: 200px;
+  height: 70px;
+  background: url('/lib/images/header-logo.svg') no-repeat;
+  background-size: 200px 70px;
+}
