@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+/* form base styling */
+
+.input-form {
+  border-top: 80px solid $main-blue;
+  border-radius: 3px;
+  font-family: $main-font;
+  width: 600px;
+  margin: 30px auto 0;
+  display: block;
+  background: #FFF;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12),  0 3px 1px -2px rgba(0,0,0,0.2);
+  padding: 10px 50px 50px;
+}
+
+.input-form-main-title {
+  color: #FFF;
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 45px;
+  position: relative;
+  top: -62px;
+}
+
+.input-form-container {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+input {
+  font-color: $medium-grey;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 400px;
+  border: none;
+  border-bottom: 1px solid $medium-grey;
+  margin: 0 auto;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+label {
+  color: $medium-grey;
+  font-size: 18px;
+  position: absolute;
+  pointer-events: none;
+  left: 50px;
+  top: 10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+
+/* active state */
+
+
+input:focus ~ label, input:valid ~label {
+  top: -20px;
+  font-size: 14px;
+  color: $main-blue;
+}
+
+
+/* bottom bars */
+
+.input-form-bar {
+  position: relative;
+  display: block;
+  width: 400px;
+  left: 50px;
+}
+
+.input-form-bar:before, .input-form-bar:after 	{
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:$main-blue;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+.input-form-bar:before {
+  left:50%;
+}
+
+.input-form-bar:after {
+  right:50%;
+}
+
+/* active state */
+
+input:focus ~ .input-form-bar:before, input:focus ~ .input-form-bar:after {
+  width:50%;
+}
+
+
+/* highlight */
+
+.input-form-highlight {
+  position:absolute;
+  height:60%;
+  width:100px;
+  top:25%;
+  left:50px;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active highlight */
+
+input:focus ~ .input-form-highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* animations */
+
+@-webkit-keyframes inputHighlighter {
+	from { background:$main-blue; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:$main-blue; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:$main-blue; }
+  to 	{ width:0; background:transparent; }
+}
+
+/* radio buttons */
