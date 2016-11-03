@@ -21,7 +21,7 @@ export default class InputContainer extends Component {
         <h2 className='input-form-main-title'>Add New Job Offer</h2>
 
         <div className='input-form-container'>
-          <InputComponent className='input-form-title' type='text' />
+          <InputComponent className='input-form-title' type='text'/>
           <span className="input-form-highlight"></span>
           <span className="input-form-bar"></span>
           <label>Company</label>
@@ -80,6 +80,11 @@ export default class InputContainer extends Component {
             <InputComponent className='input-form-lunch' type='radio' /> Y
             <InputComponent className='input-form-beer' type='radio' /> N
         </div>
+
+        <button
+          className='submit-button waves-effect'>
+          Submit
+        </button>
 
       </form>
     )

@@ -6,7 +6,7 @@
 
 .input-form {
   border-top: 80px solid $main-blue;
-  font-color: $medium-grey;
+  border-radius: 3px;
   font-family: $main-font;
   width: 600px;
   margin: 30px auto 0;
@@ -57,9 +57,11 @@ label {
   -webkit-transition:0.2s ease all;
 }
 
+
 /* active state */
 
-input:focus ~ label {
+
+input:focus ~ label, input:valid ~label {
   top: -20px;
   font-size: 14px;
   color: $main-blue;

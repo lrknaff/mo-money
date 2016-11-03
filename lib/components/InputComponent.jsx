@@ -13,6 +13,7 @@ export default class InputComponent extends Component {
         type={type}
         placeholder={placeholder}
         onChange={onChange}
+        required
       />
     )
   }
