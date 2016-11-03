@@ -18,6 +18,11 @@ export default class SignedInContainer extends Component {
     return (
       <div className='signed-in-container'>
         <header className='signed-in-header'>
+          <div class-Name='signed-in-logo-container'>
+            <a href='/public' className='signed-in-logo'>
+              MoMoney Logo
+            </a>
+          </div>
         </header>
 
         <main className='signed-in-body'>
