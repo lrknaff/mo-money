@@ -1,34 +1,33 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { pick, map, extend, filter} from 'lodash';
-import moment from 'moment';
-import firebase, { reference, signIn, signOut } from '../firebase';
-import SignedInContainer from '../containers/SignedInContainer';
-import SignedOutContainer from '../containers/SignedOutContainer';
+import React, { Component } from 'react'
+import { pick, map, extend, filter } from 'lodash'
+import moment from 'moment'
+import firebase, { reference, signIn, signOut } from '../firebase'
+import SignedInContainer from '../containers/SignedInContainer'
+import SignedOutContainer from '../containers/SignedOutContainer'
 
 
 export default class Application extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
-      user: null
-    };
+      user: null,
+    }
   }
 
   componentDidMount() {
-    firebase.auth().onAuthStateChanged(user => this.setState({ user }));
+    firebase.auth().onAuthStateChanged(user => this.setState({ user }))
   }
 
   render() {
-    const user = this.state.user;
+    const user = this.state.user
 
     return (
-        <div className='sign-in-out'>
+      <div className="sign-in-out">
         {user ?
           <SignedInContainer /> :
-          <SignedOutContainer />
+          <SignedOutContainer /> // eslint-disable-line
         }
-        </div>
+      </div>
     )
   }
 }
