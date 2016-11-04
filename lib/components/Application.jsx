@@ -11,14 +11,44 @@ export default class Application extends Component {
     super()
     this.state = {
       user: null,
+      cardArray: [],
+      cardDatabase: null,
     }
   }
 
   componentDidMount() {
-    firebase.auth().onAuthStateChanged(user => this.setState({ user }))
+    firebase.auth().onAuthStateChanged(user =>
+      this.assignDBReference(user))
   }
 
-  addJobToDB() {
+  assignDBReference(user) {
+    this.setState({
+      user,
+      cardDatabase: user ? firebase.database().ref(user.uid) : null,
+    },
+      () => {
+        this.createDBEventListener(user)
+      }
+    )
+  }
+
+  createDBEventListener(user) {
+    if (user) {
+      firebase.database().ref(user.uid).on('value', (snapshot) => {
+        const cards = snapshot.val() || {}
+        this.setState({
+          cardArray: map(cards, (val, key) => extend(val, { key })),
+        })
+      })
+    } else {
+      this.setState({
+        cards: [],
+      })
+    }
+  }
+
+  addJobToDB(cardArray) {
+    this.state.cardDatabase.push(cardArray)
     console.log('trying to add job to DB')
   }
 

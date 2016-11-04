@@ -9,7 +9,7 @@ export default class SignedInContainer extends Component {
   constructor() {
     super()
     this.state = {
-      cardsArray: [{ key: 2, jobTitle: 'Google', jobLocation: 'San Fransisco', jobOffer: 75000, jobAdjusted: 50000 }],
+      cardArray: [{ key: 2, jobTitle: 'Google', jobLocation: 'San Fransisco', jobOffer: 75000, jobAdjusted: 50000 }],
     }
   }
 
@@ -19,7 +19,7 @@ export default class SignedInContainer extends Component {
         <header className="signed-in-header" />
         <main className="signed-in-body">
           <InputContainer addJobToDB={this.props.addJobToDB} />
-          {this.state.cardsArray.map(card =>
+          {this.state.cardArray.map(card =>
             <CardComponent
               key={card.key}
               jobTitle={card.jobTitle}
