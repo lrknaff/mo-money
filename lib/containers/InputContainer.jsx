@@ -60,7 +60,7 @@ export default class InputContainer extends Component {
           <label htmlFor="Company">Company</label>
         </div>
 
-        {/* <div className="input-form-container">
+        <div className="input-form-container">
           <InputComponent
             className="input-form-title"
             name="title"
@@ -149,12 +149,11 @@ export default class InputContainer extends Component {
           <span className="input-form-highlight" />
           <span className="input-form-bar" />
           <label htmlFor="Distance">Distance from home</label>
-        </div> */}
+        </div>
 
         <button
           className="submit-button waves-effect"
           onClick={() => this.addJob()}
-          // onClick={e => this.props.addJobToCardArray(this.state)}
         > Submit </button>
 
       </div>

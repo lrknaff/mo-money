@@ -11,7 +11,6 @@ export default class Application extends Component {
     this.state = {
       user: null,
       cardArray: [],
-      cardDatabase: null,
     }
   }
 
@@ -32,22 +31,34 @@ export default class Application extends Component {
   }
 
   createDBEventListener(user) {
-    if (user) {
+    if (database.ref(user.uid)) {
       database.ref(user.uid).on('value', (snapshot) => {
         const cards = snapshot.val() || {}
         this.setState({
-          cardArray: map(cards, (val, key) => extend(val, { key })),
+          cardArray: map(cards, val => val),
         })
       })
     } else {
       this.setState({
-        cards: [],
+        cardArray: [
+          {
+            company: 'Google',
+            title: 'Front End Designer',
+            location: 'San Fransisco, CA',
+            salary: '75000',
+            bonus: '15000',
+            retirement: '4',
+            insurance: '250',
+            distance: '10',
+            id: '1',
+          },
+        ],
       })
     }
   }
 
   pushJobsToDB = (cardArray) => {
-    database.ref(`user/${this.state.user.uid}`).set(cardArray)
+    database.ref(this.state.user.uid).set(cardArray)
   }
 
   render() {
@@ -56,7 +67,7 @@ export default class Application extends Component {
     return (
       <div className="sign-in-out">
         {user ?
-          <SignedInContainer pushJobsToDB={this.pushJobsToDB} /> :
+          <SignedInContainer cardArray={this.state.cardArray} pushJobsToDB={this.pushJobsToDB} /> :
           <SignedOutContainer /> // eslint-disable-line
         }
       </div>

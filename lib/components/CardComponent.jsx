@@ -16,5 +16,4 @@ export default class CardComponent extends Component {
       </article>
     )
   }
-
 }

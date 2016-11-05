@@ -9,7 +9,22 @@ export default class SignedInContainer extends Component {
   constructor() {
     super()
     this.state = {
-      cardArray: [{ id: 2, title: 'Google', location: 'San Fransisco', salary: 75000, jobAdjusted: 50000 }],
+      cardArray: [{
+        company: 'Facebook',
+        title: 'Front End Designer',
+        location: 'San Fransisco, CA',
+        salary: '75000',
+        bonus: '15000',
+        retirement: '4',
+        insurance: '250',
+        distance: '10',
+        id: '1',
+      }],
+    }
+  }
+  componentWillUpdate() {
+    if (this.props.cardArray !== this.state.cardArray) {
+      this.setState({ cardArray: this.props.cardArray })
     }
   }
 
