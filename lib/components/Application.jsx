@@ -5,7 +5,6 @@ import firebase, { reference, signIn, signOut } from '../firebase'
 import SignedInContainer from '../containers/SignedInContainer'
 import SignedOutContainer from '../containers/SignedOutContainer'
 
-
 export default class Application extends Component {
   constructor() {
     super()
@@ -47,9 +46,8 @@ export default class Application extends Component {
     }
   }
 
-  addJobToDB(cardArray) {
+  pushJobsToDB = (cardArray) => {
     this.state.cardDatabase.push(cardArray)
-    console.log('trying to add job to DB')
   }
 
   render() {
@@ -58,7 +56,7 @@ export default class Application extends Component {
     return (
       <div className="sign-in-out">
         {user ?
-          <SignedInContainer addJobToDB={this.addJobToDB.bind(this)} /> :
+          <SignedInContainer pushJobsToDB={this.pushJobsToDB} /> :
           <SignedOutContainer /> // eslint-disable-line
         }
       </div>
