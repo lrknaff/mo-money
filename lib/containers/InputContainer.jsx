@@ -31,7 +31,6 @@ export default class InputContainer extends Component {
     this.state.id = Date.now()
     this.state.retirement = this.state.retirement * 0.01
     this.state.adjustedSalary = costOfLivingCalculation(this.state)
-    console.log(this.state)
     this.props.addJobToCardArray(this.state)
     this.setState({
       company: '',

@@ -44,15 +44,7 @@ export default class SignedInContainer extends Component {
         </header>
         <main className="signed-in-body">
           <InputContainer addJobToCardArray={this.addJobToCardArray} />
-          {this.state.cardArray.map(card =>
-            <CardComponent
-              key={card.id}
-              title={card.title}
-              city={card.city}
-              jobOffer={card.salary}
-              jobAdjusted={card.adjustedSalary}
-            />
-          )}
+          { this.state.cardArray.map(card => <CardComponent card={card} />) }
           <button className="sign-out-button waves-effect" onClick={() => signOut()}>Sign Out</button>
         </main>
       </div>
