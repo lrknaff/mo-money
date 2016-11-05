@@ -19,7 +19,7 @@ module.exports = {
           presets: ['es2015', 'react', 'stage-0'],
         },
       },
-      { test: /\.css$/, loader: 'sty:le!css' },
+      { test: /\.css$/, loader: 'style!css' },
       { test: /\.scss$/, loader: 'style!css!sass' },
       { test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
