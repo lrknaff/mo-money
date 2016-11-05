@@ -66,13 +66,14 @@ export default class CardComponent extends Component {
             <button
               className="card-detail-edit"
               onClick={() => { this.setState({ edit: !this.state.edit }) }}
-            >
-              Edit
-            </button>
+            > Edit </button>
           </div>
         :
           null
         }
+        {this.state.edit ?
+          <InputContainer card={this.props.card} />
+           : null}
       </section>
     )
   }
