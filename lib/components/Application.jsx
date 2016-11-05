@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { pick, map, extend, filter } from 'lodash'
 import moment from 'moment'
-import firebase, { reference, signIn, signOut } from '../firebase'
+import firebase, { database, signIn, signOut } from '../firebase'
 import SignedInContainer from '../containers/SignedInContainer'
 import SignedOutContainer from '../containers/SignedOutContainer'
 
@@ -23,7 +23,7 @@ export default class Application extends Component {
   assignDBReference(user) {
     this.setState({
       user,
-      cardDatabase: user ? firebase.database().ref(user.uid) : null,
+      cardDatabase: user ? database.ref(user.uid) : null,
     },
       () => {
         this.createDBEventListener(user)
@@ -33,7 +33,7 @@ export default class Application extends Component {
 
   createDBEventListener(user) {
     if (user) {
-      firebase.database().ref(user.uid).on('value', (snapshot) => {
+      database.ref(user.uid).on('value', (snapshot) => {
         const cards = snapshot.val() || {}
         this.setState({
           cardArray: map(cards, (val, key) => extend(val, { key })),
@@ -47,7 +47,7 @@ export default class Application extends Component {
   }
 
   pushJobsToDB = (cardArray) => {
-    this.state.cardDatabase.push(cardArray)
+    database.ref(`user/${this.state.user.uid}`).set(cardArray)
   }
 
   render() {

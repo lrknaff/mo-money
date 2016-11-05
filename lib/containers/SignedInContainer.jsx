@@ -16,6 +16,7 @@ export default class SignedInContainer extends Component {
   addJobToCardArray = (job) => {
     this.state.cardArray.push(job)
     this.setState({ cardArray: this.state.cardArray })
+    this.props.pushJobsToDB(this.state.cardArray)
   }
 
   render() {
