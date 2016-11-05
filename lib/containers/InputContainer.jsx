@@ -79,6 +79,10 @@ export default class InputContainer extends Component {
     })
   }
 
+  deleteJob() {
+    this.props.removeJobFromArray(this.state)
+  }
+
   render() {
     const { company, title, city, salary, bonus, retirement, insurance, distance } = this.state
     return (
@@ -197,7 +201,12 @@ export default class InputContainer extends Component {
           className="submit-button waves-effect"
           onClick={this.props.card ? () => this.editJob() : () => this.addJob()}
         > Submit </button>
-
+        {this.props.card ?
+          <button
+            className="submit-button waves-effect"
+            onClick={() => this.deleteJob()}
+          >Remove</button> : null
+        }
       </div>
     )
   }

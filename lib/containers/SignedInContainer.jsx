@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { pick, map, extend, filter } from 'lodash'
+import { pick, map, extend, filter, pullAllBy } from 'lodash'
 import moment from 'moment'
 import firebase, { reference, signIn, signOut } from '../firebase'
 import CardComponent from '../components/CardComponent'
@@ -34,10 +34,15 @@ export default class SignedInContainer extends Component {
     this.props.pushJobsToDB(this.state.cardArray)
   }
 
+  removeJobFromArray = (job) => {
+    const newCardArray = pullAllBy(this.state.cardArray, [{ id: job.id }], 'id')
+    console.log(newCardArray)
+    this.setState({ cardArray: newCardArray })
+    this.props.pushJobsToDB(this.state.cardArray)
+  }
+
   updateJobInArray = (targetJob) => {
     this.state.cardArray.forEach((job, i) => {
-      console.log('job.id', job.id)
-      console.log('targetJob.id', targetJob.id)
       if (job.id === targetJob.id) {
         const newCardArray = this.state.cardArray
         newCardArray[i] = targetJob
@@ -60,6 +65,7 @@ export default class SignedInContainer extends Component {
           { this.state.cardArray.map(card =>
             <CardComponent
               updateJobInArray={this.updateJobInArray}
+              removeJobFromArray={this.removeJobFromArray}
               card={card}
               key={card.id}
             />
