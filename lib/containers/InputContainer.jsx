@@ -22,10 +22,11 @@ export default class InputContainer extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     if (this.props.card) {
-      const { company, title, city, salary, bonus, retirement, insurance, distance, lunch, beer } = this.props.card
+      const { company, title, city, salary, bonus, retirement, insurance, distance, lunch, beer, id } = this.props.card
       this.setState({
+        id,
         company,
         title,
         city,
@@ -63,7 +64,19 @@ export default class InputContainer extends Component {
   }
 
   editJob() {
-
+    this.state.retirement = this.state.retirement * 0.01
+    this.state.adjustedSalary = costOfLivingCalculation(this.state)
+    this.props.updateJobInArray(this.state)
+    this.setState({
+      company: '',
+      title: '',
+      city: '',
+      salary: '',
+      bonus: '',
+      retirement: '',
+      insurance: '',
+      distance: '',
+    })
   }
 
   render() {

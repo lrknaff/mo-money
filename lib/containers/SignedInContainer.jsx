@@ -34,6 +34,19 @@ export default class SignedInContainer extends Component {
     this.props.pushJobsToDB(this.state.cardArray)
   }
 
+  updateJobInArray = (targetJob) => {
+    this.state.cardArray.forEach((job, i) => {
+      console.log('job.id', job.id)
+      console.log('targetJob.id', targetJob.id)
+      if (job.id === targetJob.id) {
+        const newCardArray = this.state.cardArray
+        newCardArray[i] = targetJob
+        this.setState({ cardArray: newCardArray })
+        this.props.pushJobsToDB(this.state.cardArray)
+      }
+    })
+  }
+
   render() {
     return (
       <div className="signed-in-container">
@@ -44,7 +57,13 @@ export default class SignedInContainer extends Component {
         </header>
         <main className="signed-in-body">
           <InputContainer addJobToCardArray={this.addJobToCardArray} />
-          { this.state.cardArray.map(card => <CardComponent card={card} key={card.id}/>) }
+          { this.state.cardArray.map(card =>
+            <CardComponent
+              updateJobInArray={this.updateJobInArray}
+              card={card}
+              key={card.id}
+            />
+           ) }
           <button className="sign-out-button waves-effect" onClick={() => signOut()}>Sign Out</button>
         </main>
       </div>

@@ -72,7 +72,7 @@ export default class CardComponent extends Component {
           null
         }
         {this.state.edit ?
-          <InputContainer card={this.props.card} />
+          <InputContainer updateJobInArray={this.props.updateJobInArray} card={this.props.card} />
            : null}
       </section>
     )
