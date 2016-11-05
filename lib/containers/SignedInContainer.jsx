@@ -50,7 +50,7 @@ export default class SignedInContainer extends Component {
               title={card.title}
               city={card.city}
               jobOffer={card.salary}
-              jobAdjusted={card.salary}
+              jobAdjusted={card.adjustedSalary}
             />
           )}
           <button className="sign-out-button waves-effect" onClick={() => signOut()}>Sign Out</button>
