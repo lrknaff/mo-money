@@ -135,18 +135,18 @@ describe('Calc Tests: ', () => {
 
     it('should return a value of 58939.25 when the city is Denver', () => {
       const costOfLivingCalculation = Calc.costOfLivingCalculation(
-        annualSalary,
-        annualBonus,
-        match401k,
-        lunch,
-        beer,
-        milesToWork,
-        healthInsurancePremium,
-        cityDenver)
+        { salary: 80000,
+          bonus: 5000,
+          retirement: 0.07,
+          insurance: 200,
+          distance: 5,
+          lunch: true,
+          beer: true,
+          city: 'Denver' })
       assert.equal(costOfLivingCalculation, 58939.25)
     })
 
-    it('should return a value of 48919.58 when the city is San Francisco', () => {
+    it('should return a value of 49349.93 when the city is San Francisco', () => {
       const costOfLivingCalculation = Calc.costOfLivingCalculation(
         annualSalary,
         annualBonus,
@@ -159,7 +159,7 @@ describe('Calc Tests: ', () => {
       assert.equal(costOfLivingCalculation, 49349.93)
     })
 
-    it('should return a value of 45383.22 when the city is New York City', () => {
+    it('should return a value of 42784.86 when the city is New York City', () => {
       const costOfLivingCalculation = Calc.costOfLivingCalculation(
         annualSalary,
         annualBonus,

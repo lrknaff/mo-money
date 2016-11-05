@@ -12,7 +12,7 @@ export default class SignedInContainer extends Component {
       cardArray: [{
         company: 'Facebook',
         title: 'Front End Designer',
-        location: 'San Fransisco, CA',
+        city: 'San Fransisco, CA',
         salary: '75000',
         bonus: '15000',
         retirement: '4',
@@ -44,15 +44,7 @@ export default class SignedInContainer extends Component {
         </header>
         <main className="signed-in-body">
           <InputContainer addJobToCardArray={this.addJobToCardArray} />
-          {this.state.cardArray.map(card =>
-            <CardComponent
-              key={card.id}
-              title={card.title}
-              location={card.location}
-              jobOffer={card.salary}
-              jobAdjusted={card.salary}
-            />
-          )}
+          { this.state.cardArray.map(card => <CardComponent card={card} key={card.id}/>) }
           <button className="sign-out-button waves-effect" onClick={() => signOut()}>Sign Out</button>
         </main>
       </div>

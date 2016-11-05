@@ -3,7 +3,7 @@ import { pick, map, extend, filter } from 'lodash'
 import moment from 'moment'
 import firebase, { reference, signIn, signOut } from '../firebase'
 import InputComponent from '../components/InputComponent'
-
+import { costOfLivingCalculation } from '../utilities/calc'
 
 export default class InputContainer extends Component {
   constructor() {
@@ -11,27 +11,31 @@ export default class InputContainer extends Component {
     this.state = {
       company: '',
       title: '',
-      location: '',
+      city: '',
       salary: '',
       bonus: '',
       retirement: '',
       insurance: '',
       distance: '',
+      lunch: true,
+      beer: true,
     }
   }
 
   updateJobState = (e) => {
-    const { value, name } = e.target
-    this.setState({ [name]: value })
+    const { value, name, type } = e.target
+    this.setState({ [name]: type === 'number' ? parseInt(value, 10) : value })
   }
 
   addJob() {
     this.state.id = Date.now()
+    this.state.retirement = this.state.retirement * 0.01
+    this.state.adjustedSalary = costOfLivingCalculation(this.state)
     this.props.addJobToCardArray(this.state)
     this.setState({
       company: '',
       title: '',
-      location: '',
+      city: '',
       salary: '',
       bonus: '',
       retirement: '',
@@ -41,7 +45,7 @@ export default class InputContainer extends Component {
   }
 
   render() {
-    const { company, title, location, salary, bonus, retirement, insurance, distance } = this.state
+    const { company, title, city, salary, bonus, retirement, insurance, distance } = this.state
     return (
       <div className="input-form">
 
@@ -76,14 +80,14 @@ export default class InputContainer extends Component {
         <div className="input-form-container">
           <InputComponent
             className="input-form-location"
-            name="location"
-            value={location}
+            name="city"
+            value={city}
             type="text"
             onChange={this.updateJobState}
           />
           <span className="input-form-highlight" />
           <span className="input-form-bar" />
-          <label htmlFor="Location">Location</label>
+          <label htmlFor="city">City</label>
         </div>
 
         <div className="input-form-container">
