@@ -135,14 +135,14 @@ describe('Calc Tests: ', () => {
 
     it('should return a value of 58939.25 when the city is Denver', () => {
       const costOfLivingCalculation = Calc.costOfLivingCalculation(
-        annualSalary,
-        annualBonus,
-        match401k,
-        lunch,
-        beer,
-        milesToWork,
-        healthInsurancePremium,
-        cityDenver)
+        { salary: 80000,
+          bonus: 5000,
+          retirement: 0.07,
+          insurance: 200,
+          distance: 5,
+          lunch: true,
+          beer: true,
+          city: 'Denver' })
       assert.equal(costOfLivingCalculation, 58939.25)
     })
 

@@ -12,7 +12,7 @@ export default class SignedInContainer extends Component {
       cardArray: [{
         company: 'Facebook',
         title: 'Front End Designer',
-        location: 'San Fransisco, CA',
+        city: 'San Fransisco, CA',
         salary: '75000',
         bonus: '15000',
         retirement: '4',
@@ -48,7 +48,7 @@ export default class SignedInContainer extends Component {
             <CardComponent
               key={card.id}
               title={card.title}
-              location={card.location}
+              city={card.city}
               jobOffer={card.salary}
               jobAdjusted={card.salary}
             />
