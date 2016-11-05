@@ -9,8 +9,29 @@ export default class SignedInContainer extends Component {
   constructor() {
     super()
     this.state = {
-      cardsArray: [{ key: 2, jobTitle: 'Google', jobLocation: 'San Fransisco', jobOffer: 75000, jobAdjusted: 50000 }],
+      cardArray: [{
+        company: 'Facebook',
+        title: 'Front End Designer',
+        location: 'San Fransisco, CA',
+        salary: '75000',
+        bonus: '15000',
+        retirement: '4',
+        insurance: '250',
+        distance: '10',
+        id: '1',
+      }],
     }
+  }
+  componentWillUpdate() {
+    if (this.props.cardArray !== this.state.cardArray) {
+      this.setState({ cardArray: this.props.cardArray })
+    }
+  }
+
+  addJobToCardArray = (job) => {
+    this.state.cardArray.push(job)
+    this.setState({ cardArray: this.state.cardArray })
+    this.props.pushJobsToDB(this.state.cardArray)
   }
 
   render() {
@@ -22,14 +43,14 @@ export default class SignedInContainer extends Component {
           </a>
         </header>
         <main className="signed-in-body">
-          <InputContainer />
-          {this.state.cardsArray.map(card =>
+          <InputContainer addJobToCardArray={this.addJobToCardArray} />
+          {this.state.cardArray.map(card =>
             <CardComponent
-              key={card.key}
-              jobTitle={card.jobTitle}
-              jobLocation={card.jobLocation}
-              jobOffer={card.jobOffer}
-              jobAdjusted={card.jobAdjusted}
+              key={card.id}
+              title={card.title}
+              location={card.location}
+              jobOffer={card.salary}
+              jobAdjusted={card.salary}
             />
           )}
           <button className="sign-out-button waves-effect" onClick={() => signOut()}>Sign Out</button>
