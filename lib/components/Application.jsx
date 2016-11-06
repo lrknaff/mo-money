@@ -42,6 +42,7 @@ export default class Application extends Component {
                          company: 'Google',
                          title: 'Director of Underwater Basket Weaving',
                          city: 'Denver',
+                         state: 'CO',
                          salary: 65000,
                          bonus: 10000,
                          retirement: 0.07,

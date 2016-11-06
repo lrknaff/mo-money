@@ -12,6 +12,7 @@ export default class InputContainer extends Component {
       company: '',
       title: '',
       city: '',
+      state: '',
       salary: '',
       bonus: '',
       retirement: '',
@@ -24,12 +25,13 @@ export default class InputContainer extends Component {
 
   componentWillMount() {
     if (this.props.card) {
-      const { company, title, city, salary, bonus, retirement, insurance, distance, lunch, beer, id } = this.props.card
+      const { company, title, city, state, salary, bonus, retirement, insurance, distance, lunch, beer, id } = this.props.card
       this.setState({
         id,
         company,
         title,
         city,
+        state,
         salary,
         bonus,
         retirement,
@@ -55,6 +57,7 @@ export default class InputContainer extends Component {
       company: '',
       title: '',
       city: '',
+      state: '',
       salary: '',
       bonus: '',
       retirement: '',
@@ -71,6 +74,7 @@ export default class InputContainer extends Component {
       company: '',
       title: '',
       city: '',
+      state: '',
       salary: '',
       bonus: '',
       retirement: '',
@@ -84,7 +88,7 @@ export default class InputContainer extends Component {
   }
 
   render() {
-    const { company, title, city, salary, bonus, retirement, insurance, distance } = this.state
+    const { company, title, city, state, salary, bonus, retirement, insurance, distance } = this.state
     return (
       <div className="input-form-outer-container">
         <form className="input-form-inner-container">
@@ -130,6 +134,19 @@ export default class InputContainer extends Component {
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
             <label htmlFor="city">City</label>
+          </div>
+
+          <div className="input-form-container">
+            <InputComponent
+              className="input-form-location"
+              name="state"
+              value={state}
+              type="text"
+              onChange={this.updateJobState}
+            />
+            <span className="input-form-highlight" />
+            <span className="input-form-bar" />
+            <label htmlFor="state">State</label>
           </div>
 
           <div className="input-form-container">

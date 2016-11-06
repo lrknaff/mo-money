@@ -11,14 +11,14 @@ export default class CardComponent extends Component {
     }
   }
   render() {
-    const { company, title, city, salary, bonus, retirement, insurance, distance, lunch, beer, adjustedSalary } = this.props.card
+    const { company, title, city, state, salary, bonus, retirement, insurance, distance, lunch, beer, adjustedSalary } = this.props.card
     const adjustedAvailible = (adjustedSalary !== 'NaN')
     return (
       <section className="card">
         <article className="card-job-breakdown">
           <h2 className="card-job-company"> {company} </h2>
           <h2 className="card-job-title"> {title} </h2>
-          <h3 className="card-job-city">{city}</h3>
+          <h3 className="card-job-city">{city}, {state}</h3>
           <h6 className="card-job-offer">offer: {salary}</h6>
           <h6 className="card-job-adjusted">
             adjusted: {adjustedAvailible ? (parseInt(adjustedSalary, 10)).toFixed(0)
