@@ -1,8 +1,8 @@
 require('babel-register')({
-  presets: ['es2015', 'react', 'stage-0']
-});
+  presets: ['es2015', 'react', 'stage-0'],
+})
 
-require('babel-polyfill');
+require('babel-polyfill')
 
 global.document = require('jsdom').jsdom(`
   <head>
@@ -12,7 +12,7 @@ global.document = require('jsdom').jsdom(`
   <body>
     <div id='react-container'></div>
   </body>
-`);
+`)
 
-global.window = document.defaultView;
-global.navigator = window.navigator;
+global.window = document.defaultView
+global.navigator = window.navigator

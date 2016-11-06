@@ -9,17 +9,8 @@ export default class SignedInContainer extends Component {
   constructor() {
     super()
     this.state = {
-      cardArray: [{
-        company: 'Facebook',
-        title: 'Front End Designer',
-        city: 'San Fransisco, CA',
-        salary: '75000',
-        bonus: '15000',
-        retirement: '4',
-        insurance: '250',
-        distance: '10',
-        id: '1',
-      }],
+      cardArray: [],
+      addJob: false,
     }
   }
   componentWillUpdate() {
@@ -36,7 +27,6 @@ export default class SignedInContainer extends Component {
 
   removeJobFromArray = (job) => {
     const newCardArray = pullAllBy(this.state.cardArray, [{ id: job.id }], 'id')
-    console.log(newCardArray)
     this.setState({ cardArray: newCardArray })
     this.props.pushJobsToDB(this.state.cardArray)
   }
@@ -61,7 +51,8 @@ export default class SignedInContainer extends Component {
           </a>
         </header>
         <main className="signed-in-body">
-          <InputContainer addJobToCardArray={this.addJobToCardArray} />
+          <img src="#" onClick={() => this.setState({ addJob: !this.state.addJob })} />
+          {this.state.addJob ? <InputContainer addJobToCardArray={this.addJobToCardArray} /> : null }
           { this.state.cardArray.map(card =>
             <CardComponent
               updateJobInArray={this.updateJobInArray}

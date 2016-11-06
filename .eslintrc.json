@@ -18,6 +18,7 @@
     "class-methods-use-this": [0],
     "no-unused-vars": "off",
     "react/prop-types": "off",
-    "jsx-a11y/img-has-alt": "off"
+    "jsx-a11y/img-has-alt": "off",
+    "import/no-extraneous-dependencies": "off"
   }
 }
