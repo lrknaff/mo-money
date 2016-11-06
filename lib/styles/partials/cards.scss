@@ -1,11 +1,14 @@
 /* highlight card view */
-.card {
+.card-job-container {
+  background: #FFF;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12),  0 3px 1px -2px rgba(0,0,0,0.2);
   font-family: $main-font;
+  font-weight: 300;
   width: 80%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 800px;
+  margin: 15px auto;
+  padding: 35px;
+  position: relative;
 }
 
 .card-job-breakdown {
@@ -14,7 +17,84 @@
 }
 
 .card-job-company {
+  font-size: 25px;
+  padding-bottom: 10px;
+}
 
+.card-job-title {
+  padding-bottom: 3px;
+}
+
+.card-job-city {
+  padding-bottom: 15px;
+}
+
+.card-job-offer, .card-job-adjusted {
+  display: inline-block;
+  font-weight: 400;
+  padding-right: 15px;
+}
+
+.card-job-adjusted {
+  color: $main-blue;
+}
+
+/* arrow */
+.card-arrow {
+  background: none;
+  box-shadow: none;
+  padding: 5px;
+  height: 50px;
+  position: absolute;
+  right: 30px;
+  top: 65px;
+  span {
+    background-color: $medium-grey;
+    height: 3px;
+    width: 17px;
+    margin-bottom: 34px;
+    display: block;
+    transition: all 0.2s;
+    will-change: transform;
+  }
+  .first {
+    transform: translate(0px, 11px) rotate(45deg);
+  }
+  .last{
+    transform: translate(0px, -16px) rotate(-45deg);
+  }
+  &:hover {
+    box-shadow: none;
+  }
+  &:focus {
+    outline: none;
+  }
 }
 
 /* extended card view */
+
+.card-label, .card-amount {
+  width: 50%;
+  margin-bottom: 15px;
+}
+
+.card-label {
+  float: left;
+  text-align: left;
+}
+
+.card-amount {
+  float: right;
+  text-align: right;
+}
+
+
+/* extended arrow */
+.card-arrow.open {
+  .first {
+    transform: translateY(20px) rotate(-45deg);
+  }
+  .last {
+    transform: translateY(-17px) translateX(-11px) rotate(45deg);
+  }
+}

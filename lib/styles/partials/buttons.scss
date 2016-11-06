@@ -19,9 +19,16 @@ button {
       background: #FFF;
     }
   }
-
   &:hover {
     box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+  }
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    background: $light-grey;
+    box-shadow: none;
+    cursor: auto;
   }
 }
 
@@ -48,7 +55,7 @@ button {
   bottom: 27px;
   font-size: 32px;
   font-weight: 400;
-  left: 35%;
+  left: 37%;
   height: 50px;
   width: 50px;
   padding: 0;
@@ -80,4 +87,8 @@ button {
   .last {
     transform: translateY(-16px) rotate(45deg);
   }
+}
+
+.submit-button {
+  margin: 10px;
 }
