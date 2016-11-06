@@ -1,3 +1,5 @@
+/* main buttons */
+
 button {
   background: $main-blue;
   border: none;
@@ -38,3 +40,48 @@ button {
   will-change: opacity, transform;
   transition: .3s ease-out;
 }
+
+/* add new card button */
+.signed-in-add-card-button {
+  background-color: $medium-grey;
+  border-radius: 50%;
+  bottom: 27px;
+  font-size: 32px;
+  font-weight: 400;
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  position: relative;
+  div {
+    padding: 4px 0 0 15px;
+  }
+  span {
+    height: 3px;
+    width: 20px;
+    margin-bottom: 33px;
+    background-color: #FFF;
+    display: block;
+    transition: all 0.2s;
+    will-change: transform;
+  }
+  .first {
+    transform: translate(0px, 20px) rotate(90deg);
+  }
+  .last{
+    transform: translate(0px, -16px);
+  }
+}
+
+.signed-in-add-card-button.open {
+  .first {
+    transform: translateY(20px) rotate(-45deg);
+  }
+  .last {
+    transform: translateY(-16px) rotate(45deg);
+  }
+}
+
+// .signed-in-add-card-button.open {
+//   transform: rotate(-45deg);
+//   transform-origin: center;
+// }

@@ -69,7 +69,15 @@ export default class SignedInContainer extends Component {
           </a>
         </header>
         <main className="signed-in-body">
-          <img src="#" onClick={() => this.setState({ addJob: !this.state.addJob })} />
+          <button
+            className={this.state.addJob ? 'signed-in-add-card-button open' : 'signed-in-add-card-button closed'}
+            onClick={() => this.setState({ addJob: !this.state.addJob })}
+          >
+            <div>
+              <span className="first" />
+              <span className="last" />
+            </div>
+          </button>
           {this.state.addJob ? <InputContainer addJobToCardArray={this.addJobToCardArray} /> : null }
           { this.state.cardArray.map(card =>
             <CardComponent
