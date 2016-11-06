@@ -64,10 +64,10 @@ export default class InputContainer extends Component {
       insurance: '',
       distance: '',
     })
+    this.props.toggleAddJob()
   }
 
   editJob() {
-    this.state.retirement = this.state.retirement * 0.01
     this.state.adjustedSalary = costOfLivingCalculation(this.state)
     this.props.updateJobInArray(this.state)
     this.setState({
@@ -81,6 +81,7 @@ export default class InputContainer extends Component {
       insurance: '',
       distance: '',
     })
+    this.props.toggleEditJob()
   }
 
   deleteJob() {
@@ -217,11 +218,14 @@ export default class InputContainer extends Component {
           <button
             className="submit-button waves-effect"
             onClick={this.props.card ? () => this.editJob() : () => this.addJob()}
+            disabled={!(company && title && city && state && salary && bonus && retirement && insurance && distance)}
+            type="button"
           > Submit </button>
           {this.props.card ?
             <button
               className="submit-button waves-effect"
               onClick={() => this.deleteJob()}
+              type="button"
             >Remove</button> : null
           }
         </form>

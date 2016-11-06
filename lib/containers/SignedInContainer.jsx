@@ -42,6 +42,10 @@ export default class SignedInContainer extends Component {
     })
   }
 
+  toggleAddJob = () => {
+    this.setState({ addJob: !this.state.addJob })
+  }
+
   render() {
     return (
       <div className="signed-in-container">
@@ -60,7 +64,11 @@ export default class SignedInContainer extends Component {
               <span className="last" />
             </div>
           </button>
-          {this.state.addJob ? <InputContainer addJobToCardArray={this.addJobToCardArray} /> : null }
+          {this.state.addJob ?
+            <InputContainer
+              toggleAddJob={this.toggleAddJob}
+              addJobToCardArray={this.addJobToCardArray}
+            /> : null }
           { this.state.cardArray.map(card =>
             <CardComponent
               updateJobInArray={this.updateJobInArray}
