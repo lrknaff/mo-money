@@ -12,7 +12,7 @@ export default class CardComponent extends Component {
   }
   render() {
     const { company, title, city, salary, bonus, retirement, insurance, distance, lunch, beer, adjustedSalary } = this.props.card
-
+    const adjustedAvailible = (adjustedSalary !== 'NaN')
     return (
       <section className="card">
         <article className="card-job-breakdown">
@@ -20,7 +20,10 @@ export default class CardComponent extends Component {
           <h2 className="card-job-title"> {title} </h2>
           <h3 className="card-job-city">{city}</h3>
           <h6 className="card-job-offer">offer: {salary}</h6>
-          <h6 className="card-job-adjusted">adjusted: {(parseInt(adjustedSalary, 10)).toFixed(0)}</h6>
+          <h6 className="card-job-adjusted">
+            adjusted: {adjustedAvailible ? (parseInt(adjustedSalary, 10)).toFixed(0)
+                                         : 'unavailable'}
+          </h6>
           <img
             className="card-arrow"
             src="#"
@@ -37,10 +40,14 @@ export default class CardComponent extends Component {
                 <h6 className="card-rate-label">Hourly:</h6>
               </div>
               <div className="card-amount">
-                <h6 className="card-rate-annual">{(parseInt(adjustedSalary, 10)).toFixed(0)}</h6>
-                <h6 className="card-rate-monthly">{(adjustedSalary / 12).toFixed(0) }</h6>
-                <h6 className="card-rate-weekly">{(adjustedSalary / 52).toFixed(0)}</h6>
-                <h6 className="card-rate-hourly">{(adjustedSalary / 2080).toFixed(0)}</h6>
+                <h6 className="card-rate-annual">{adjustedAvailible ? (parseInt(adjustedSalary, 10)).toFixed(0)
+                                                                    : 'unavailable'}</h6>
+                <h6 className="card-rate-monthly">{adjustedAvailible ? (adjustedSalary / 12).toFixed(0)
+                                                                     : 'unavailable'}</h6>
+                <h6 className="card-rate-weekly">{adjustedAvailible ? (adjustedSalary / 52).toFixed(0)
+                                                                    : 'unavailable'}</h6>
+                <h6 className="card-rate-hourly">{adjustedAvailible ? (adjustedSalary / 2080).toFixed(0)
+                                                                    : 'unavailable'}</h6>
               </div>
             </article>
             <article className="card-detail-breakdown">

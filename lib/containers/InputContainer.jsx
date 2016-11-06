@@ -129,7 +129,7 @@ export default class InputContainer extends Component {
           />
           <span className="input-form-highlight" />
           <span className="input-form-bar" />
-          <label htmlFor="city">City</label>
+          <label htmlFor="city">City/State</label>
         </div>
 
         <div className="input-form-container">
