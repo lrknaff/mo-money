@@ -5,9 +5,9 @@
   font-family: $main-font;
   font-weight: 300;
   width: 80%;
-  max-width: 1200px;
+  max-width: 800px;
   margin: 15px auto;
-  padding: 20px;
+  padding: 35px;
   position: relative;
 }
 
@@ -47,7 +47,7 @@
   height: 50px;
   position: absolute;
   right: 30px;
-  top: 48px;
+  top: 65px;
   span {
     background-color: $medium-grey;
     height: 3px;

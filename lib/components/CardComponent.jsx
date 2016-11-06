@@ -65,22 +65,22 @@ export default class CardComponent extends Component {
               <hr />
               <article className="card-detail-breakdown">
                 <div className="card-label">
-                  <h6 className="card-detail-annual">Salary:</h6>
-                  <h6 className="card-detail-monthly">Bonus:</h6>
-                  <h6 className="card-detail-weekly">401(k) Match:</h6>
-                  <h6 className="card-detail-hourly">Lunch:</h6>
-                  <h6 className="card-detail-hourly">Beer:</h6>
-                  <h6 className="card-detail-hourly">Insurance:</h6>
-                  <h6 className="card-detail-hourly">Miles From Home:</h6>
+                  <h6>Salary:</h6>
+                  <h6>Bonus:</h6>
+                  <h6>401(k) Match:</h6>
+                  <h6>Lunch:</h6>
+                  <h6>Beer:</h6>
+                  <h6>Insurance:</h6>
+                  <h6>Miles From Home:</h6>
                 </div>
                 <div className="card-amount">
-                  <h6 className="card-detail-annual">{salary}</h6>
-                  <h6 className="card-detail-monthly">{bonus}</h6>
-                  <h6 className="card-detail-weekly">{retirement}</h6>
-                  <h6 className="card-detail-hourly">{lunch}</h6>
-                  <h6 className="card-detail-hourly">{beer}</h6>
-                  <h6 className="card-detail-hourly">{insurance}</h6>
-                  <h6 className="card-detail-hourly">{distance}</h6>
+                  <h6>{salary}</h6>
+                  <h6>{bonus}</h6>
+                  <h6>{retirement}</h6>
+                  <h6>true</h6>
+                  <h6>false</h6>
+                  <h6>{insurance}</h6>
+                  <h6>{distance}</h6>
                 </div>
               </article>
               <button
