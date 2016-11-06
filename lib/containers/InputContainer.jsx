@@ -86,127 +86,128 @@ export default class InputContainer extends Component {
   render() {
     const { company, title, city, salary, bonus, retirement, insurance, distance } = this.state
     return (
-      <div className="input-form">
+      <div className="input-form-outer-container">
+        <form className="input-form-inner-container">
+          <h2 className="input-form-main-title">{this.props.card ?
+              `Edit job offer from ${this.props.card.company}` :
+              'Add New Job Offer'}
+          </h2>
 
-        <h2 className="input-form-main-title">{this.props.card ?
-            `Edit job offer from ${this.props.card.company}` :
-            'Add New Job Offer'}
-        </h2>
+          <div className="input-form-container">
+            <InputComponent
+              className="input-form-company"
+              name="company"
+              value={company}
+              type="text"
+              onChange={this.updateJobState}
+            />
+            <span className="input-form-highlight" />
+            <span className="input-form-bar" />
+            <label htmlFor="Company">Company</label>
+          </div>
 
-        <div className="input-form-container">
-          <InputComponent
-            className="input-form-company"
-            name="company"
-            value={company}
-            type="text"
-            onChange={this.updateJobState}
-          />
-          <span className="input-form-highlight" />
-          <span className="input-form-bar" />
-          <label htmlFor="Company">Company</label>
-        </div>
+          <div className="input-form-container">
+            <InputComponent
+              className="input-form-title"
+              name="title"
+              value={title}
+              type="text"
+              onChange={this.updateJobState}
+            />
+            <span className="input-form-highlight" />
+            <span className="input-form-bar" />
+            <label htmlFor="Title">Title</label>
+          </div>
 
-        <div className="input-form-container">
-          <InputComponent
-            className="input-form-title"
-            name="title"
-            value={title}
-            type="text"
-            onChange={this.updateJobState}
-          />
-          <span className="input-form-highlight" />
-          <span className="input-form-bar" />
-          <label htmlFor="Title">Title</label>
-        </div>
+          <div className="input-form-container">
+            <InputComponent
+              className="input-form-location"
+              name="city"
+              value={city}
+              type="text"
+              onChange={this.updateJobState}
+            />
+            <span className="input-form-highlight" />
+            <span className="input-form-bar" />
+            <label htmlFor="city">City</label>
+          </div>
 
-        <div className="input-form-container">
-          <InputComponent
-            className="input-form-location"
-            name="city"
-            value={city}
-            type="text"
-            onChange={this.updateJobState}
-          />
-          <span className="input-form-highlight" />
-          <span className="input-form-bar" />
-          <label htmlFor="city">City</label>
-        </div>
+          <div className="input-form-container">
+            <InputComponent
+              className="input-form-salary"
+              name="salary"
+              value={salary}
+              type="number"
+              onChange={this.updateJobState}
+            />
+            <span className="input-form-highlight" />
+            <span className="input-form-bar" />
+            <label htmlFor="Salary">Salary</label>
+          </div>
 
-        <div className="input-form-container">
-          <InputComponent
-            className="input-form-salary"
-            name="salary"
-            value={salary}
-            type="number"
-            onChange={this.updateJobState}
-          />
-          <span className="input-form-highlight" />
-          <span className="input-form-bar" />
-          <label htmlFor="Salary">Salary</label>
-        </div>
+          <div className="input-form-container">
+            <InputComponent
+              className="input-form-bonus"
+              name="bonus"
+              value={bonus}
+              type="number"
+              onChange={this.updateJobState}
+            />
+            <span className="input-form-highlight" />
+            <span className="input-form-bar" />
+            <label htmlFor="Bonus">Bonus</label>
+          </div>
 
-        <div className="input-form-container">
-          <InputComponent
-            className="input-form-bonus"
-            name="bonus"
-            value={bonus}
-            type="number"
-            onChange={this.updateJobState}
-          />
-          <span className="input-form-highlight" />
-          <span className="input-form-bar" />
-          <label htmlFor="Bonus">Bonus</label>
-        </div>
+          <div className="input-form-container">
+            <InputComponent
+              className="input-form-401k"
+              name="retirement"
+              value={retirement}
+              type="number"
+              onChange={this.updateJobState}
+            />
+            <span className="input-form-highlight" />
+            <span className="input-form-bar" />
+            <label htmlFor="401K">401K match %</label>
+          </div>
 
-        <div className="input-form-container">
-          <InputComponent
-            className="input-form-401k"
-            name="retirement"
-            value={retirement}
-            type="number"
-            onChange={this.updateJobState}
-          />
-          <span className="input-form-highlight" />
-          <span className="input-form-bar" />
-          <label htmlFor="401K">401K match %</label>
-        </div>
+          <div className="input-form-container">
+            <InputComponent
+              className="input-form-insurance"
+              name="insurance"
+              value={insurance}
+              type="number"
+              onChange={this.updateJobState}
+            />
+            <span className="input-form-highlight" />
+            <span className="input-form-bar" />
+            <label htmlFor="Insurance">Insurance</label>
+          </div>
 
-        <div className="input-form-container">
-          <InputComponent
-            className="input-form-insurance"
-            name="insurance"
-            value={insurance}
-            type="number"
-            onChange={this.updateJobState}
-          />
-          <span className="input-form-highlight" />
-          <span className="input-form-bar" />
-          <label htmlFor="Insurance">Insurance</label>
-        </div>
+          <div className="input-form-container">
+            <InputComponent
+              className="input-form-distance"
+              name="distance"
+              value={distance}
+              type="number"
+              onChange={this.updateJobState}
+            />
+            <span className="input-form-highlight" />
+            <span className="input-form-bar" />
+            <label htmlFor="Distance">Distance from home</label>
+          </div>
 
-        <div className="input-form-container">
-          <InputComponent
-            className="input-form-distance"
-            name="distance"
-            value={distance}
-            type="number"
-            onChange={this.updateJobState}
-          />
-          <span className="input-form-highlight" />
-          <span className="input-form-bar" />
-          <label htmlFor="Distance">Distance from home</label>
-        </div>
-
-        <button
-          className="submit-button waves-effect"
-          onClick={this.props.card ? () => this.editJob() : () => this.addJob()}
-        > Submit </button>
-        {this.props.card ?
           <button
             className="submit-button waves-effect"
-            onClick={() => this.deleteJob()}
-          >Remove</button> : null
-        }
+            onClick={this.props.card ? () => this.editJob() : () => this.addJob()}
+          > Submit </button>
+          {this.props.card ?
+            <button
+              className="submit-button waves-effect"
+              onClick={() => this.deleteJob()}
+            >Remove</button> : null
+          }
+        </form>
       </div>
     )
   }
