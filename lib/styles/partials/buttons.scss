@@ -25,6 +25,11 @@ button {
   &:focus {
     outline: none;
   }
+  &:disabled {
+    background: $light-grey;
+    box-shadow: none;
+    cursor: auto;
+  }
 }
 
 .waves-effect {
