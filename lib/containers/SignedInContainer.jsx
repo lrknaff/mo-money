@@ -17,6 +17,24 @@ export default class SignedInContainer extends Component {
     if (this.props.cardArray !== this.state.cardArray) {
       this.setState({ cardArray: this.props.cardArray })
     }
+    // else {
+    //   this.setState({
+    //     cardArray: {
+    //       id: 1,
+    //       adjustedSalary: 75000,
+    //       company: 'Google',
+    //       title: 'Director of Underwater Basket Weaving',
+    //       city: 'Denver',
+    //       salary: 65000,
+    //       bonus: 10000,
+    //       retirement: 0.07,
+    //       insurance: 200,
+    //       distance: 5,
+    //       beer: true,
+    //       lunch: true,
+    //     },
+    //   })
+    // }
   }
 
   addJobToCardArray = (job) => {
