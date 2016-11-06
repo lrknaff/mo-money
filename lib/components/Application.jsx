@@ -14,7 +14,7 @@ export default class Application extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     firebase.auth().onAuthStateChanged(user =>
       this.assignDBReference(user))
   }
@@ -31,29 +31,27 @@ export default class Application extends Component {
   }
 
   createDBEventListener(user) {
-    if (database.ref(user.uid)) {
-      database.ref(user.uid).on('value', (snapshot) => {
-        const cards = snapshot.val() || {}
-        cards.length ? this.setState({ cardArray: map(cards, val => val) })
-                     : this.setState({
-                       cardArray: [{
-                         id: 1,
-                         adjustedSalary: 75000,
-                         company: 'Google',
-                         title: 'Director of Underwater Basket Weaving',
-                         city: 'Denver',
-                         state: 'CO',
-                         salary: 65000,
-                         bonus: 10000,
-                         retirement: 0.07,
-                         insurance: 200,
-                         distance: 5,
-                         beer: true,
-                         lunch: true,
-                       }],
-                     })
-      })
-    }
+    database.ref(user.uid).on('value', (snapshot) => {
+      const cards = snapshot.val() || {}
+      cards.length ? this.setState({ cardArray: map(cards, val => val) })
+                   : this.setState({
+                     cardArray: [{
+                       id: 1,
+                       adjustedSalary: 75000,
+                       company: 'Google',
+                       title: 'Director of Underwater Basket Weaving',
+                       city: 'Denver',
+                       state: 'CO',
+                       salary: 65000,
+                       bonus: 10000,
+                       retirement: 0.07,
+                       insurance: 200,
+                       distance: 5,
+                       beer: true,
+                       lunch: true,
+                     }],
+                   })
+    })
   }
 
   pushJobsToDB = (cardArray) => {

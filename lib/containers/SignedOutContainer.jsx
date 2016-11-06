@@ -6,6 +6,10 @@ import Quote from '../components/Quote'
 
 export default class SignedOutContainer extends Component {
 
+  signIn() {
+    signIn()
+  }
+
   render() {
     return (
       <section className="sign-in-container">
@@ -15,7 +19,7 @@ export default class SignedOutContainer extends Component {
           </a>
         </div>
         <Quote />
-        <button className="sign-in-button waves-effect" onClick={() => signIn()}> Sign In </button>
+        <button className="sign-in-button waves-effect" onClick={() => this.signIn()}> Sign In </button>
       </section>
     )
   }
