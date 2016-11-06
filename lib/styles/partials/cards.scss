@@ -73,6 +73,21 @@
 
 /* extended card view */
 
+.card-label, .card-amount {
+  width: 50%;
+  margin-bottom: 15px;
+}
+
+.card-label {
+  float: left;
+  text-align: left;
+}
+
+.card-amount {
+  float: right;
+  text-align: right;
+}
+
 
 /* extended arrow */
 .card-arrow.open {

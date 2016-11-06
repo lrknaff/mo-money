@@ -3,6 +3,10 @@ body {
   background: $light-grey;
 }
 
+hr {
+  margin: 15px 0;
+}
+
 /* Sign In */
 .sign-in-container {
   background: linear-gradient(-15deg, rgba(1, 87, 155, 0.8), rgba(33, 150, 243, 0.7)),

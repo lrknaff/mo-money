@@ -43,24 +43,26 @@ export default class CardComponent extends Component {
           </article>
           {this.state.expanded ?
             <div>
+              <hr />
               <article className="card-rate-breakdown">
                 <div className="card-label">
-                  <h6 className="card-rate-label">Annual:</h6>
-                  <h6 className="card-rate-label">monthly:</h6>
-                  <h6 className="card-rate-label">weekly:</h6>
-                  <h6 className="card-rate-label">Hourly:</h6>
+                  <h6>Annual pay:</h6>
+                  <h6>Monthly pay:</h6>
+                  <h6>Weekly pay:</h6>
+                  <h6>Hourly pay:</h6>
                 </div>
                 <div className="card-amount">
-                  <h6 className="card-rate-annual">{adjustedAvailible ? (parseInt(adjustedSalary, 10)).toFixed(0)
+                  <h6>${adjustedAvailible ? (parseInt(adjustedSalary, 10)).toFixed(0)
                                                                       : 'unavailable'}</h6>
-                  <h6 className="card-rate-monthly">{adjustedAvailible ? (adjustedSalary / 12).toFixed(0)
+                  <h6>${adjustedAvailible ? (adjustedSalary / 12).toFixed(0)
                                                                        : 'unavailable'}</h6>
-                  <h6 className="card-rate-weekly">{adjustedAvailible ? (adjustedSalary / 52).toFixed(0)
+                  <h6>${adjustedAvailible ? (adjustedSalary / 52).toFixed(0)
                                                                       : 'unavailable'}</h6>
-                  <h6 className="card-rate-hourly">{adjustedAvailible ? (adjustedSalary / 2080).toFixed(0)
+                  <h6>${adjustedAvailible ? (adjustedSalary / 2080).toFixed(0)
                                                                       : 'unavailable'}</h6>
                 </div>
               </article>
+              <hr />
               <article className="card-detail-breakdown">
                 <div className="card-label">
                   <h6 className="card-detail-annual">Salary:</h6>
