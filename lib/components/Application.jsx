@@ -34,25 +34,23 @@ export default class Application extends Component {
     if (database.ref(user.uid)) {
       database.ref(user.uid).on('value', (snapshot) => {
         const cards = snapshot.val() || {}
-        this.setState({
-          cardArray: map(cards, val => val),
-        })
-      })
-    } else {
-      this.setState({
-        cardArray: [
-          {
-            company: 'Google',
-            title: 'Front End Designer',
-            location: 'San Fransisco, CA',
-            salary: '75000',
-            bonus: '15000',
-            retirement: '4',
-            insurance: '250',
-            distance: '10',
-            id: '1',
-          },
-        ],
+        cards.length ? this.setState({ cardArray: map(cards, val => val) })
+                     : this.setState({
+                       cardArray: [{
+                         id: 1,
+                         adjustedSalary: 75000,
+                         company: 'Google',
+                         title: 'Director of Underwater Basket Weaving',
+                         city: 'Denver',
+                         salary: 65000,
+                         bonus: 10000,
+                         retirement: 0.07,
+                         insurance: 200,
+                         distance: 5,
+                         beer: true,
+                         lunch: true,
+                       }],
+                     })
       })
     }
   }
@@ -66,9 +64,9 @@ export default class Application extends Component {
 
     return (
       <div className="sign-in-out">
-        {user ?
-          <SignedInContainer cardArray={this.state.cardArray} pushJobsToDB={this.pushJobsToDB} /> :
-          <SignedOutContainer /> // eslint-disable-line
+        {user
+          ? <SignedInContainer cardArray={this.state.cardArray} pushJobsToDB={this.pushJobsToDB} />
+          : <SignedOutContainer />
         }
       </div>
     )
