@@ -8,8 +8,14 @@ export default class CardComponent extends Component {
     super()
     this.state = {
       expanded: false,
+      edit: false,
     }
   }
+
+  toggleEditJob = () => {
+    this.setState({ edit: !this.state.edit })
+  }
+
   render() {
     const { company, title, city, state, salary, bonus, retirement, insurance, distance, lunch, beer, adjustedSalary } = this.props.card
     const adjustedAvailible = (adjustedSalary !== 'NaN')
@@ -73,6 +79,7 @@ export default class CardComponent extends Component {
             <button
               className="card-detail-edit"
               onClick={() => { this.setState({ edit: !this.state.edit }) }}
+              type="button"
             > Edit </button>
           </div>
         :
@@ -83,6 +90,7 @@ export default class CardComponent extends Component {
             updateJobInArray={this.props.updateJobInArray}
             removeJobFromArray={this.props.removeJobFromArray}
             card={this.props.card}
+            toggleEditJob={this.toggleEditJob}
           />
            : null}
       </section>
