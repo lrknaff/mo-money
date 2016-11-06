@@ -19,6 +19,8 @@
     "no-unused-vars": "off",
     "react/prop-types": "off",
     "jsx-a11y/img-has-alt": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "quote-props": "off",
+    "no-param-reassign": "off"
   }
 }
