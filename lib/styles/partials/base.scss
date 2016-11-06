@@ -1,5 +1,10 @@
 body {
   text-align: center;
+  background: $light-grey;
+}
+
+hr {
+  margin: 15px 0;
 }
 
 /* Sign In */
@@ -39,6 +44,7 @@ body {
 }
 
 /* Signed In */
+
 .signed-in-logo-container {
   padding-top: 10px;
 }
