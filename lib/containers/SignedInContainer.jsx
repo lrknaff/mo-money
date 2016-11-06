@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { pick, map, extend, filter } from 'lodash'
+import { pick, map, extend, filter, pullAllBy } from 'lodash'
 import moment from 'moment'
 import firebase, { reference, signIn, signOut } from '../firebase'
 import CardComponent from '../components/CardComponent'
@@ -34,6 +34,24 @@ export default class SignedInContainer extends Component {
     this.props.pushJobsToDB(this.state.cardArray)
   }
 
+  removeJobFromArray = (job) => {
+    const newCardArray = pullAllBy(this.state.cardArray, [{ id: job.id }], 'id')
+    console.log(newCardArray)
+    this.setState({ cardArray: newCardArray })
+    this.props.pushJobsToDB(this.state.cardArray)
+  }
+
+  updateJobInArray = (targetJob) => {
+    this.state.cardArray.forEach((job, i) => {
+      if (job.id === targetJob.id) {
+        const newCardArray = this.state.cardArray
+        newCardArray[i] = targetJob
+        this.setState({ cardArray: newCardArray })
+        this.props.pushJobsToDB(this.state.cardArray)
+      }
+    })
+  }
+
   render() {
     return (
       <div className="signed-in-container">
@@ -44,7 +62,14 @@ export default class SignedInContainer extends Component {
         </header>
         <main className="signed-in-body">
           <InputContainer addJobToCardArray={this.addJobToCardArray} />
-          { this.state.cardArray.map(card => <CardComponent card={card} key={card.id}/>) }
+          { this.state.cardArray.map(card =>
+            <CardComponent
+              updateJobInArray={this.updateJobInArray}
+              removeJobFromArray={this.removeJobFromArray}
+              card={card}
+              key={card.id}
+            />
+           ) }
           <button className="sign-out-button waves-effect" onClick={() => signOut()}>Sign Out</button>
         </main>
       </div>

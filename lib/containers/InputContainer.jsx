@@ -17,8 +17,27 @@ export default class InputContainer extends Component {
       retirement: '',
       insurance: '',
       distance: '',
-      lunch: true,
-      beer: true,
+      lunch: false,
+      beer: false,
+    }
+  }
+
+  componentWillMount() {
+    if (this.props.card) {
+      const { company, title, city, salary, bonus, retirement, insurance, distance, lunch, beer, id } = this.props.card
+      this.setState({
+        id,
+        company,
+        title,
+        city,
+        salary,
+        bonus,
+        retirement,
+        insurance,
+        distance,
+        lunch,
+        beer,
+      })
     }
   }
 
@@ -44,12 +63,35 @@ export default class InputContainer extends Component {
     })
   }
 
+  editJob() {
+    this.state.retirement = this.state.retirement * 0.01
+    this.state.adjustedSalary = costOfLivingCalculation(this.state)
+    this.props.updateJobInArray(this.state)
+    this.setState({
+      company: '',
+      title: '',
+      city: '',
+      salary: '',
+      bonus: '',
+      retirement: '',
+      insurance: '',
+      distance: '',
+    })
+  }
+
+  deleteJob() {
+    this.props.removeJobFromArray(this.state)
+  }
+
   render() {
     const { company, title, city, salary, bonus, retirement, insurance, distance } = this.state
     return (
       <div className="input-form">
 
-        <h2 className="input-form-main-title">Add New Job Offer</h2>
+        <h2 className="input-form-main-title">{this.props.card ?
+            `Edit job offer from ${this.props.card.company}` :
+            'Add New Job Offer'}
+        </h2>
 
         <div className="input-form-container">
           <InputComponent
@@ -157,9 +199,14 @@ export default class InputContainer extends Component {
 
         <button
           className="submit-button waves-effect"
-          onClick={() => this.addJob()}
+          onClick={this.props.card ? () => this.editJob() : () => this.addJob()}
         > Submit </button>
-
+        {this.props.card ?
+          <button
+            className="submit-button waves-effect"
+            onClick={() => this.deleteJob()}
+          >Remove</button> : null
+        }
       </div>
     )
   }
