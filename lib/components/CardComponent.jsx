@@ -65,22 +65,22 @@ export default class CardComponent extends Component {
               <hr />
               <article className="card-detail-breakdown">
                 <div className="card-label">
-                  <h6>Salary:</h6>
-                  <h6>Bonus:</h6>
-                  <h6>401(k) Match:</h6>
+                  <h6>Initial Salary:</h6>
+                  <h6>Yearly Bonus:</h6>
+                  <h6>401(k)% Match:</h6>
                   <h6>Lunch:</h6>
                   <h6>Beer:</h6>
-                  <h6>Insurance:</h6>
+                  <h6>Monthly Insurance:</h6>
                   <h6>Miles From Home:</h6>
                 </div>
                 <div className="card-amount">
-                  <h6>{salary}</h6>
-                  <h6>{bonus}</h6>
+                  <h6>${salary}</h6>
+                  <h6>${bonus}</h6>
                   <h6>{retirement}</h6>
-                  <h6>true</h6>
-                  <h6>false</h6>
-                  <h6>{insurance}</h6>
-                  <h6>{distance}</h6>
+                  <h6>yes</h6>
+                  <h6>no</h6>
+                  <h6>${insurance}</h6>
+                  <h6>{distance}mi</h6>
                 </div>
               </article>
               <button
