@@ -32,7 +32,7 @@ export default class CardComponent extends Component {
                                            : 'unavailable'}
             </h6>
             <button
-              className="card-arrow"
+              className={this.state.expanded ? 'card-arrow open' : 'card-arrow closed'}
               onClick={() => { this.setState({ expanded: !this.state.expanded }) }}
             >
               <div>
