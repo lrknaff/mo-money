@@ -42,7 +42,6 @@
 input {
   font-color: $medium-grey;
   font-size: 18px;
-  flex: 1 0 220px;
   padding: 10px 10px 10px 5px;
   display: block;
   width: 90%;
@@ -60,7 +59,7 @@ label {
   font-size: 18px;
   position: absolute;
   pointer-events: none;
-  left: 50px;
+  left: 6%;
   top: 10px;
   transition:0.2s ease all;
   -moz-transition:0.2s ease all;
@@ -83,8 +82,8 @@ input:focus ~ label, input:valid ~label {
 .input-form-bar {
   position: relative;
   display: block;
-  width: 400px;
-  left: 50px;
+  width: 90%;
+  left: 5%;
 }
 
 .input-form-bar:before, .input-form-bar:after 	{
