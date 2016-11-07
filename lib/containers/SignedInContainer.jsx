@@ -58,6 +58,7 @@ export default class SignedInContainer extends Component {
           <button
             className={this.state.addJob ? 'signed-in-add-card-button open' : 'signed-in-add-card-button closed'}
             onClick={() => this.setState({ addJob: !this.state.addJob })}
+            aria-label="add new job"
           >
             <div>
               <span className="first" />
