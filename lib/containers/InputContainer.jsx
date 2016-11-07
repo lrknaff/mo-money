@@ -105,10 +105,11 @@ export default class InputContainer extends Component {
               value={company}
               type="text"
               onChange={this.updateJobState}
+              aria-label="input company name"
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
-            <label htmlFor="Company">Company</label>
+            <label htmlFor="input-form-company">Company</label>
           </div>
 
           <div className="input-form-container">
@@ -118,10 +119,11 @@ export default class InputContainer extends Component {
               value={title}
               type="text"
               onChange={this.updateJobState}
+              aria-label="input job title"
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
-            <label htmlFor="Title">Title</label>
+            <label htmlFor="input-form-title">Title</label>
           </div>
 
           <div className="input-form-container">
@@ -131,6 +133,8 @@ export default class InputContainer extends Component {
               value={city}
               type="text"
               onChange={this.updateJobState}
+              label="input company city"
+              aria-label="input job city location"
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
@@ -144,6 +148,7 @@ export default class InputContainer extends Component {
               value={state}
               type="text"
               onChange={this.updateJobState}
+              aria-label="input job state location"
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
@@ -157,6 +162,7 @@ export default class InputContainer extends Component {
               value={salary}
               type="number"
               onChange={this.updateJobState}
+              aria-label="input annual salary"
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
@@ -170,6 +176,7 @@ export default class InputContainer extends Component {
               value={bonus}
               type="number"
               onChange={this.updateJobState}
+              aria-label="input yearly bonus"
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />

@@ -15,6 +15,7 @@ export default class InputComponent extends Component {
         onChange={onChange}
         required
         name={name}
+        aria-label={className}
       />
     )
   }

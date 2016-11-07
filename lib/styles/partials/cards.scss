@@ -14,6 +14,7 @@
 .card-job-breakdown {
   max-width: 800px;
   text-align: left;
+  padding-right: 50px;
 }
 
 .card-job-company {
@@ -92,6 +93,7 @@
 
 /* extended arrow */
 .card-arrow.open {
+  top: 14%;
   .first {
     transform: translateY(20px) rotate(-45deg);
   }
