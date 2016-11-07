@@ -4,7 +4,7 @@ import Calc from '../lib/utilities/calc'
 describe('Calc: ', () => {
   const annualSalary = 80000
   const annualBonus = 5000
-  const match401k = 0.07
+  const match401k = 7
   const lunch = true
   const beer = true
   const lunchFalse = false
