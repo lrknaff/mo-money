@@ -12,20 +12,18 @@ describe('SignedInContainer', () => {
       const signedOutContainer = mount(<SignedOutContainer />)
       expect(signedOutContainer).to.have.length(1)
     })
+
     it('should mount the Quote component', () => {
       const signedOutContainer = shallow(<SignedOutContainer />)
-      expect(signedOutContainer.contains('Quote'))
+      expect(signedOutContainer.find('Quote')).to.have.length(1)
     })
+
     it('should show the sign in button', () => {
       const signedOutContainer = shallow(<SignedOutContainer />)
-      expect(signedOutContainer.find('.sign-in-button').children).to.have.length(1)
+      expect(signedOutContainer.find('.sign-in-button')).to.have.length(1)
     })
   })
-  // context('Updating', () => {
-  //   it('no updating lifecycle methods to test', () => {
-  //     //
-  //   })
-  // })
+
   context('User Actions', () => {
     it('should call the firebase signIn function when the signed in button is clicked', () => {
       sinon.spy(SignedOutContainer.prototype, 'signIn')

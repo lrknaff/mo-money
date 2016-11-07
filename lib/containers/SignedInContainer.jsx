@@ -46,6 +46,10 @@ export default class SignedInContainer extends Component {
     this.setState({ addJob: !this.state.addJob })
   }
 
+  signOut() {
+    signOut()
+  }
+
   render() {
     return (
       <div className="signed-in-container">
@@ -77,7 +81,7 @@ export default class SignedInContainer extends Component {
               key={card.id}
             />
            ) }
-          <button className="sign-out-button waves-effect" onClick={() => signOut()}>Sign Out</button>
+          <button className="sign-out-button waves-effect" onClick={() => this.signOut()}>Sign Out</button>
         </main>
       </div>
     )
