@@ -48,6 +48,12 @@ export default class InputContainer extends Component {
     this.setState({ [name]: type === 'number' ? parseInt(value, 10) : value })
   }
 
+  toggleState = (e) => {
+    const { value, name } = e.target
+    console.log(value)
+    this.setState({ [name]: !value })
+  }
+
   addJob() {
     this.state.id = Date.now()
     this.state.adjustedSalary = costOfLivingCalculation(this.state)
@@ -62,6 +68,8 @@ export default class InputContainer extends Component {
       retirement: '',
       insurance: '',
       distance: '',
+      lunch: false,
+      beer: false,
     })
     this.props.toggleAddJob()
   }
@@ -79,12 +87,14 @@ export default class InputContainer extends Component {
       retirement: '',
       insurance: '',
       distance: '',
+      lunch: false,
+      beer: false,
     })
     this.props.toggleEditJob()
   }
 
   render() {
-    const { company, title, city, state, salary, bonus, retirement, insurance, distance } = this.state
+    const { company, title, city, state, salary, bonus, retirement, lunch, beer, insurance, distance } = this.state
     return (
       <div className="input-form-outer-container">
         <form className="input-form-inner-container">
@@ -200,6 +210,30 @@ export default class InputContainer extends Component {
           </div>
 
           <div className="input-form-container">
+            <h6 htmlFor="lunch">Lunch</h6>
+            <InputComponent
+              className="input-form-lunch"
+              name="lunch"
+              checked={lunch}
+              type="checkbox"
+              onChange={() => this.setState({ lunch: !this.state.lunch })}
+              ariaLabel="lunch"
+            />
+          </div>
+
+          <div className="input-form-container">
+            <h6 htmlFor="beer">Beer</h6>
+            <InputComponent
+              className="input-form-beer"
+              name="beer"
+              checked={beer}
+              type="checkbox"
+              onChange={() => this.setState({ beer: !this.state.beer })}
+              ariaLabel="beer"
+            />
+          </div>
+
+          <div className="input-form-container">
             <InputComponent
               className="input-form-insurance"
               name="insurance"
@@ -217,7 +251,7 @@ export default class InputContainer extends Component {
           <div className="input-form-container">
             <InputComponent
               className="input-form-distance"
-              placeholder="5"
+              placeholder="7"
               name="distance"
               value={distance}
               type="number"

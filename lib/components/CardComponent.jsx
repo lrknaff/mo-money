@@ -32,7 +32,12 @@ export default class CardComponent extends Component {
   }
 
   render() {
-    const { company, title, city, state, salary, bonus, retirement, insurance, distance, lunch, beer, adjustedSalary } = this.props.card
+    const { company, title, city, state, salary, bonus, retirement, insurance, distance, adjustedSalary } = this.props.card
+    let { lunch, beer } = this.props.card
+
+    lunch = lunch ? 'included' : 'not included'
+    beer = beer ? 'included' : 'not included'
+
     const adjustedAvailible = (adjustedSalary !== 'NaN')
     return (
       <section className="card">
@@ -93,8 +98,8 @@ export default class CardComponent extends Component {
                   <h6>${this.numberWithCommas(salary)}</h6>
                   <h6>${this.numberWithCommas(bonus)}</h6>
                   <h6>{retirement}</h6>
-                  <h6>yes</h6>
-                  <h6>no</h6>
+                  <h6>{lunch}</h6>
+                  <h6>{beer}</h6>
                   <h6>${this.numberWithCommas(insurance)}</h6>
                   <h6>{distance}mi</h6>
                 </div>
