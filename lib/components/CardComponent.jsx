@@ -49,6 +49,7 @@ export default class CardComponent extends Component {
             <button
               className={this.state.expanded ? 'card-arrow open' : 'card-arrow closed'}
               onClick={() => { this.setState({ expanded: !this.state.expanded }) }}
+              aria-label="expand card view"
             >
               <div>
                 <span className="first" />

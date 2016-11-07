@@ -62,6 +62,7 @@ export default class SignedInContainer extends Component {
           <button
             className={this.state.addJob ? 'signed-in-add-card-button open' : 'signed-in-add-card-button closed'}
             onClick={() => this.setState({ addJob: !this.state.addJob })}
+            aria-label="add new job"
           >
             <div>
               <span className="first" />
@@ -81,7 +82,11 @@ export default class SignedInContainer extends Component {
               key={card.id}
             />
            ) }
-          <button className="sign-out-button waves-effect" onClick={() => this.signOut()}>Sign Out</button>
+          <button
+            className="sign-out-button waves-effect"
+            onClick={() => this.signOut()}
+            aria-label="sign out"
+          >Sign Out</button>
         </main>
       </div>
     )

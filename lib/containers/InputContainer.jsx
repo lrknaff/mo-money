@@ -101,10 +101,11 @@ export default class InputContainer extends Component {
               value={company}
               type="text"
               onChange={this.updateJobState}
+              ariaLabel="company name input"
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
-            <label htmlFor="Company">Company</label>
+            <label htmlFor="input-form-company">Company</label>
           </div>
 
           <div className="input-form-container">
@@ -114,10 +115,11 @@ export default class InputContainer extends Component {
               value={title}
               type="text"
               onChange={this.updateJobState}
+              ariaLabel="job title input"
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
-            <label htmlFor="Title">Title</label>
+            <label htmlFor="input-form-title">Title</label>
           </div>
 
           <div className="input-form-container">
@@ -127,6 +129,8 @@ export default class InputContainer extends Component {
               value={city}
               type="text"
               onChange={this.updateJobState}
+              label="input company city"
+              ariaLabel="job city location input"
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
@@ -140,6 +144,7 @@ export default class InputContainer extends Component {
               value={state}
               type="text"
               onChange={this.updateJobState}
+              ariaLabel="job location state input"
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
@@ -153,6 +158,7 @@ export default class InputContainer extends Component {
               value={salary}
               type="number"
               onChange={this.updateJobState}
+              ariaLabel="job annual salary offer input"
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
@@ -166,6 +172,7 @@ export default class InputContainer extends Component {
               value={bonus}
               type="number"
               onChange={this.updateJobState}
+              ariaLabel="job yearly bonus input"
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
@@ -179,6 +186,7 @@ export default class InputContainer extends Component {
               value={retirement}
               type="number"
               onChange={this.updateJobState}
+              ariaLabel="job 401k % match input"
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
@@ -192,6 +200,7 @@ export default class InputContainer extends Component {
               value={insurance}
               type="number"
               onChange={this.updateJobState}
+              ariaLabel="job monthly insurance cost input"
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
@@ -205,6 +214,7 @@ export default class InputContainer extends Component {
               value={distance}
               type="number"
               onChange={this.updateJobState}
+              ariaLabel="job distance from home in miles input"
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
@@ -216,6 +226,7 @@ export default class InputContainer extends Component {
             onClick={this.props.card ? () => this.editJob() : () => this.addJob()}
             disabled={!(company && title && city && state && salary && bonus && retirement && insurance && distance)}
             type="button"
+            aria-label="submit new job"
           > Submit </button>
         </form>
       </div>
