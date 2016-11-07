@@ -48,6 +48,12 @@ export default class InputContainer extends Component {
     this.setState({ [name]: type === 'number' ? parseInt(value, 10) : value })
   }
 
+  toggleState = (e) => {
+    const { value, name } = e.target
+    console.log(value)
+    this.setState({ [name]: !value })
+  }
+
   addJob() {
     this.state.id = Date.now()
     this.state.adjustedSalary = costOfLivingCalculation(this.state)
@@ -62,6 +68,8 @@ export default class InputContainer extends Component {
       retirement: '',
       insurance: '',
       distance: '',
+      lunch: false,
+      beer: false,
     })
     this.props.toggleAddJob()
   }
@@ -79,16 +87,14 @@ export default class InputContainer extends Component {
       retirement: '',
       insurance: '',
       distance: '',
+      lunch: false,
+      beer: false,
     })
     this.props.toggleEditJob()
   }
 
-  deleteJob() {
-    this.props.removeJobFromArray(this.state)
-  }
-
   render() {
-    const { company, title, city, state, salary, bonus, retirement, insurance, distance } = this.state
+    const { company, title, city, state, salary, bonus, retirement, lunch, beer, insurance, distance } = this.state
     return (
       <div className="input-form-outer-container">
         <form className="input-form-inner-container">
@@ -100,6 +106,7 @@ export default class InputContainer extends Component {
           <div className="input-form-container">
             <InputComponent
               className="input-form-company"
+              placeholder="ABC Corp."
               name="company"
               value={company}
               type="text"
@@ -114,6 +121,7 @@ export default class InputContainer extends Component {
           <div className="input-form-container">
             <InputComponent
               className="input-form-title"
+              placeholder="Front End Engineer"
               name="title"
               value={title}
               type="text"
@@ -128,6 +136,7 @@ export default class InputContainer extends Component {
           <div className="input-form-container">
             <InputComponent
               className="input-form-location"
+              placeholder="Denver"
               name="city"
               value={city}
               type="text"
@@ -144,6 +153,7 @@ export default class InputContainer extends Component {
             <InputComponent
               className="input-form-location"
               name="state"
+              placeholder="CO"
               value={state}
               type="text"
               onChange={this.updateJobState}
@@ -157,6 +167,7 @@ export default class InputContainer extends Component {
           <div className="input-form-container">
             <InputComponent
               className="input-form-salary"
+              placeholder="60000"
               name="salary"
               value={salary}
               type="number"
@@ -165,12 +176,13 @@ export default class InputContainer extends Component {
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
-            <label htmlFor="Salary">Salary</label>
+            <label htmlFor="Salary">Annual Salary</label>
           </div>
 
           <div className="input-form-container">
             <InputComponent
               className="input-form-bonus"
+              placeholder="6000"
               name="bonus"
               value={bonus}
               type="number"
@@ -179,12 +191,13 @@ export default class InputContainer extends Component {
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
-            <label htmlFor="Bonus">Bonus</label>
+            <label htmlFor="Bonus">Annual Bonus</label>
           </div>
 
           <div className="input-form-container">
             <InputComponent
               className="input-form-401k"
+              placeholder="7"
               name="retirement"
               value={retirement}
               type="number"
@@ -197,9 +210,34 @@ export default class InputContainer extends Component {
           </div>
 
           <div className="input-form-container">
+            <h6 htmlFor="lunch">Lunch</h6>
+            <InputComponent
+              className="input-form-lunch"
+              name="lunch"
+              checked={lunch}
+              type="checkbox"
+              onChange={() => this.setState({ lunch: !this.state.lunch })}
+              ariaLabel="lunch"
+            />
+          </div>
+
+          <div className="input-form-container">
+            <h6 htmlFor="beer">Beer</h6>
+            <InputComponent
+              className="input-form-beer"
+              name="beer"
+              checked={beer}
+              type="checkbox"
+              onChange={() => this.setState({ beer: !this.state.beer })}
+              ariaLabel="beer"
+            />
+          </div>
+
+          <div className="input-form-container">
             <InputComponent
               className="input-form-insurance"
               name="insurance"
+              placeholder="200"
               value={insurance}
               type="number"
               onChange={this.updateJobState}
@@ -207,12 +245,13 @@ export default class InputContainer extends Component {
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
-            <label htmlFor="Insurance">Insurance</label>
+            <label htmlFor="Insurance">Monthly Insurance Premium</label>
           </div>
 
           <div className="input-form-container">
             <InputComponent
               className="input-form-distance"
+              placeholder="7"
               name="distance"
               value={distance}
               type="number"
@@ -221,7 +260,7 @@ export default class InputContainer extends Component {
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
-            <label htmlFor="Distance">Distance from home</label>
+            <label htmlFor="Distance">Distance from home in miles</label>
           </div>
 
           <button
@@ -231,13 +270,6 @@ export default class InputContainer extends Component {
             type="button"
             aria-label="submit new job"
           > Submit </button>
-          {this.props.card ?
-            <button
-              className="submit-button waves-effect"
-              onClick={() => this.deleteJob()}
-              type="button"
-            >Remove</button> : null
-          }
         </form>
       </div>
     )

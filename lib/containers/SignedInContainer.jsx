@@ -46,6 +46,10 @@ export default class SignedInContainer extends Component {
     this.setState({ addJob: !this.state.addJob })
   }
 
+  signOut() {
+    signOut()
+  }
+
   render() {
     return (
       <div className="signed-in-container">
@@ -80,7 +84,7 @@ export default class SignedInContainer extends Component {
            ) }
           <button
             className="sign-out-button waves-effect"
-            onClick={() => signOut()}
+            onClick={() => this.signOut()}
             aria-label="sign out"
           >Sign Out</button>
         </main>
