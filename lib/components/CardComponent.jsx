@@ -16,6 +16,10 @@ export default class CardComponent extends Component {
     this.setState({ edit: !this.state.edit })
   }
 
+  deleteJob() {
+    this.props.removeJobFromArray(this.props.card)
+  }
+
   numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
   }
@@ -92,6 +96,11 @@ export default class CardComponent extends Component {
                 onClick={() => { this.setState({ edit: !this.state.edit }) }}
                 type="button"
               > Edit </button>
+              <button
+                className="submit-button waves-effect"
+                onClick={() => this.deleteJob()}
+                type="button"
+              >Remove</button>
             </div>
           :
             null

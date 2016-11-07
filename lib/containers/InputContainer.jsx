@@ -84,10 +84,6 @@ export default class InputContainer extends Component {
     this.props.toggleEditJob()
   }
 
-  deleteJob() {
-    this.props.removeJobFromArray(this.state)
-  }
-
   render() {
     const { company, title, city, state, salary, bonus, retirement, insurance, distance } = this.state
     return (
@@ -221,13 +217,6 @@ export default class InputContainer extends Component {
             disabled={!(company && title && city && state && salary && bonus && retirement && insurance && distance)}
             type="button"
           > Submit </button>
-          {this.props.card ?
-            <button
-              className="submit-button waves-effect"
-              onClick={() => this.deleteJob()}
-              type="button"
-            >Remove</button> : null
-          }
         </form>
       </div>
     )
