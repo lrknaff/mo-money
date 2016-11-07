@@ -9,6 +9,7 @@ export default class CardComponent extends Component {
     this.state = {
       expanded: false,
       edit: false,
+      mainCard: true,
     }
   }
 
@@ -20,6 +21,7 @@ export default class CardComponent extends Component {
     this.setState({
       edit: !this.state.edit,
       expanded: !this.state.expanded,
+      mainCard: !this.state.mainCard,
     })
   }
 
@@ -41,6 +43,7 @@ export default class CardComponent extends Component {
     const adjustedAvailible = (adjustedSalary !== 'NaN')
     return (
       <section className="card">
+        {this.state.mainCard ?
         <div className="card-job-container">
           <article className="card-job-breakdown">
             <h2 className="card-job-company"> {company} </h2>
@@ -106,7 +109,7 @@ export default class CardComponent extends Component {
               </article>
               <button
                 className="card-detail-edit"
-                onClick={() => { this.setState({ edit: !this.state.edit }) }}
+                onClick={() => { this.setState({ edit: !this.state.edit, mainCard: !this.state.mainCard }) }}
                 type="button"
               > Edit </button>
               <button
@@ -118,7 +121,7 @@ export default class CardComponent extends Component {
           :
             null
         }
-        </div>
+        </div> : null}
         {this.state.edit ?
           <InputContainer
             updateJobInArray={this.props.updateJobInArray}
