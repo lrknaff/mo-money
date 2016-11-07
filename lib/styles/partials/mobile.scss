@@ -2,6 +2,12 @@
 /* small */
 
 @media screen and (max-width: 380px) {
+  .quote-text {
+    margin-top: 5vh;
+  }
+  .quote-text .author-text {
+    margin: 8px 0 20px 0;
+  }
   h6 {
     font-size: 16px;
   }
@@ -11,9 +17,16 @@
   .signed-in-add-card-button {
     left: 40%;
   }
+  .input-form-outer-container {
+    width: 90%;
+    padding: 10px 20px 50px;
+  }
+  .input-form-main-title {
+    font-size: 20px;
+  }
   .card-job-container {
     padding: 20px;
-    width: 85%;
+    width: 90%;
   }
   .card-job-breakdown {
     padding-right: 40px;
