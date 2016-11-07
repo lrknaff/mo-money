@@ -16,6 +16,13 @@ export default class CardComponent extends Component {
     this.setState({ edit: !this.state.edit })
   }
 
+  toggleEditExpanded = () => {
+    this.setState({
+      edit: !this.state.edit,
+      expanded: !this.state.expanded,
+    })
+  }
+
   deleteJob() {
     this.props.removeJobFromArray(this.props.card)
   }
@@ -111,7 +118,7 @@ export default class CardComponent extends Component {
             updateJobInArray={this.props.updateJobInArray}
             removeJobFromArray={this.props.removeJobFromArray}
             card={this.props.card}
-            toggleEditJob={this.toggleEditJob}
+            toggleEditJob={this.toggleEditExpanded}
           />
            : null}
       </section>
