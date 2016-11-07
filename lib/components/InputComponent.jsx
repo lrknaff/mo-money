@@ -4,7 +4,7 @@ import firebase, { reference, signIn, signOut } from '../firebase'
 
 export default class InputComponent extends Component {
   render() {
-    const { value, placeholder, onChange, className, type, name } = this.props
+    const { value, placeholder, onChange, className, type, name, ariaLabel } = this.props
 
     return (
       <input
@@ -15,6 +15,7 @@ export default class InputComponent extends Component {
         onChange={onChange}
         required
         name={name}
+        aria-label={ariaLabel}
       />
     )
   }
