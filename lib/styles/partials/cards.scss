@@ -23,7 +23,7 @@
 }
 
 .card-job-title {
-  padding-bottom: 3px;
+  padding-bottom: 5px;
 }
 
 .card-job-city {
@@ -76,24 +76,25 @@
 /* extended card view */
 
 .card-label, .card-amount {
-  width: 50%;
   margin-bottom: 15px;
 }
 
 .card-label {
   float: left;
   text-align: left;
+  width: 75%;
 }
 
 .card-amount {
   float: right;
   text-align: right;
+  width: 25%;
 }
 
 
 /* extended arrow */
 .card-arrow.open {
-  top: 14%;
+  top: 15%;
   .first {
     transform: translateY(20px) rotate(-45deg);
   }

@@ -1,0 +1,21 @@
+/* screen breakpoints */
+/* small */
+
+@media screen and (max-width: 380px) {
+  h6 {
+    font-size: 16px;
+  }
+  .signed-in-logo {
+    margin-left: 30px;
+  }
+  .signed-in-add-card-button {
+    left: 40%;
+  }
+  .card-job-container {
+    padding: 20px;
+    width: 85%;
+  }
+  .card-job-breakdown {
+    padding-right: 40px;
+  }
+}
