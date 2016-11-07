@@ -78,7 +78,11 @@ export default class SignedInContainer extends Component {
               key={card.id}
             />
            ) }
-          <button className="sign-out-button waves-effect" onClick={() => signOut()}>Sign Out</button>
+          <button
+            className="sign-out-button waves-effect"
+            onClick={() => signOut()}
+            aria-label="sign out"
+          >Sign Out</button>
         </main>
       </div>
     )
