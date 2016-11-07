@@ -11,7 +11,8 @@ export default class InputComponent extends Component {
         className={className}
         value={value}
         type={type}
-        placeholder={placeholder}
+        placeholder="test"
+        // placeholder={placeholder}
         onChange={onChange}
         required
         name={name}

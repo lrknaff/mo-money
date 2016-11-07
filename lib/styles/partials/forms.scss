@@ -52,6 +52,9 @@ input {
   &:focus {
     outline: none;
   }
+  &::-webkit-input-placeholder {
+    color: white;
+  }
 }
 
 label {
@@ -76,6 +79,11 @@ input:focus ~ label, input:valid ~label {
   color: $main-blue;
 }
 
+input:focus {
+  &::-webkit-input-placeholder {
+    color: $medium-grey;
+  }
+}
 
 /* bottom bars */
 
