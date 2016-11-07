@@ -96,6 +96,7 @@ export default class InputContainer extends Component {
           <div className="input-form-container">
             <InputComponent
               className="input-form-company"
+              placeholder="ABC Corp."
               name="company"
               value={company}
               type="text"
@@ -110,6 +111,7 @@ export default class InputContainer extends Component {
           <div className="input-form-container">
             <InputComponent
               className="input-form-title"
+              placeholder="Front End Engineer"
               name="title"
               value={title}
               type="text"
@@ -124,6 +126,7 @@ export default class InputContainer extends Component {
           <div className="input-form-container">
             <InputComponent
               className="input-form-location"
+              placeholder="Denver"
               name="city"
               value={city}
               type="text"
@@ -140,6 +143,7 @@ export default class InputContainer extends Component {
             <InputComponent
               className="input-form-location"
               name="state"
+              placeholder="CO"
               value={state}
               type="text"
               onChange={this.updateJobState}
@@ -153,6 +157,7 @@ export default class InputContainer extends Component {
           <div className="input-form-container">
             <InputComponent
               className="input-form-salary"
+              placeholder="60000"
               name="salary"
               value={salary}
               type="number"
@@ -161,12 +166,13 @@ export default class InputContainer extends Component {
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
-            <label htmlFor="Salary">Salary</label>
+            <label htmlFor="Salary">Annual Salary</label>
           </div>
 
           <div className="input-form-container">
             <InputComponent
               className="input-form-bonus"
+              placeholder="6000"
               name="bonus"
               value={bonus}
               type="number"
@@ -175,12 +181,13 @@ export default class InputContainer extends Component {
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
-            <label htmlFor="Bonus">Bonus</label>
+            <label htmlFor="Bonus">Annual Bonus</label>
           </div>
 
           <div className="input-form-container">
             <InputComponent
               className="input-form-401k"
+              placeholder="7"
               name="retirement"
               value={retirement}
               type="number"
@@ -196,6 +203,7 @@ export default class InputContainer extends Component {
             <InputComponent
               className="input-form-insurance"
               name="insurance"
+              placeholder="200"
               value={insurance}
               type="number"
               onChange={this.updateJobState}
@@ -203,12 +211,13 @@ export default class InputContainer extends Component {
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
-            <label htmlFor="Insurance">Insurance</label>
+            <label htmlFor="Insurance">Monthly Insurance Premium</label>
           </div>
 
           <div className="input-form-container">
             <InputComponent
               className="input-form-distance"
+              placeholder="5"
               name="distance"
               value={distance}
               type="number"
@@ -217,7 +226,7 @@ export default class InputContainer extends Component {
             />
             <span className="input-form-highlight" />
             <span className="input-form-bar" />
-            <label htmlFor="Distance">Distance from home</label>
+            <label htmlFor="Distance">Distance from home in miles</label>
           </div>
 
           <button
