@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+
 import React, { Component } from 'react'
 import { pick, map, extend, filter } from 'lodash'
 import moment from 'moment'
@@ -91,6 +93,24 @@ export default class InputContainer extends Component {
       beer: false,
     })
     this.props.toggleEditJob()
+  }
+
+  setSubmitButtonStatus() {
+    const { company, title, city, state, salary, bonus, retirement, lunch, beer, insurance, distance } = this.state
+
+    if ((
+      company === ''
+      || title === ''
+      || city === ''
+      || state === ''
+      || salary === ''
+      || bonus === ''
+      || insurance === ''
+      || distance === ''
+      || retirement === '')) {
+      return true
+    }
+    return false
   }
 
   render() {
@@ -266,7 +286,7 @@ export default class InputContainer extends Component {
           <button
             className="submit-button waves-effect"
             onClick={this.props.card ? () => this.editJob() : () => this.addJob()}
-            disabled={!(company && title && city && state && salary && bonus && insurance && distance)}
+            disabled={this.setSubmitButtonStatus()}
             type="button"
             aria-label="submit new job"
           > Submit </button>
