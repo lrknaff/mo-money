@@ -11,7 +11,7 @@ MoMoney is an application that will allow you to compare job offers based on inc
 
 ## Assumptions
 
-* The total income with salary and income is between $37,650 and $91,150
+* The total income with salary and bonus is between $37,650 and $91,150
 * State taxes are are an average on the entire state and does not account for difference with in the state
 * 401(k) match contribuitions by the employee are at the maximum possible
 * Lunch is assumed to be $8.50
@@ -22,4 +22,4 @@ MoMoney is an application that will allow you to compare job offers based on inc
 * There are 40 hours in the work week
 * 48 weeks in the offce
 
-## Calculations
+
