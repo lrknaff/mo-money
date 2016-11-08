@@ -12,11 +12,11 @@ MoMoney is an application that will allow you to compare job offers based on inc
 ## Assumptions
 
 * The total income with salary and bonus is between $37,650 and $91,150
-* State taxes are are an average on the entire state and does not account for difference with in the state
+* State taxes are an average of the entire state and do not account for differences within the state
 * 401(k) match contribuitions by the employee are at the maximum possible
 * Lunch is assumed to be $8.50
 * Beer is assumed to be $10.00
-* Transportation is calculated and the federal reimbursement rate of $0.54 per mile
+* Transportation is calculated at the federal reimbursement rate of $0.54 per mile
 * Cost of living does not include the differences in state tax rates
 * The work week is five days long
 * There are 40 hours in the work week
