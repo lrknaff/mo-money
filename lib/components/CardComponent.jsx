@@ -37,8 +37,8 @@ export default class CardComponent extends Component {
     const { company, title, city, state, salary, bonus, retirement, insurance, distance, adjustedSalary } = this.props.card
     let { lunch, beer } = this.props.card
 
-    lunch = lunch ? 'included' : 'not included'
-    beer = beer ? 'included' : 'not included'
+    lunch = lunch ? 'yes' : 'no'
+    beer = beer ? 'yes' : 'no'
 
     const adjustedAvailible = (adjustedSalary !== 'NaN')
     return (
