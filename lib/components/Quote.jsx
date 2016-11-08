@@ -8,14 +8,13 @@ export default class Quote extends Component {
       source: 'http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?',
       randomQuote: {},
     }
+    this.defaultQuote()
     this.getRandomQuote()
   }
 
-  compn
-
   getRandomQuote() {
     $.getJSON(this.state.source, (result) => {
-      if (result) {
+      if (result.quoteText.length > 1) {
         this.checkRandomQuoteLength(result)
       } else {
         this.defaultQuote()
