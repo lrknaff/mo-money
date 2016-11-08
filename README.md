@@ -6,7 +6,7 @@ MoMoney is an application that will allow you to compare job offers based on inc
 
 ## Datasources
 
-[Average State Taxes](https://wallethub.com/edu/best-worst-states-to-be-a-taxpayer/2416/)
+[Average State Taxes](https://wallethub.com/edu/best-worst-states-to-be-a-taxpayer/2416/)<br />
 [Cost of Living](https://www.missourieconomy.org/indicators/cost_of_living/index.stm)
 
 ## Assumptions
