@@ -16,6 +16,7 @@ export default class Quote extends Component {
 
   getRandomQuote() {
     $.getJSON(this.state.source, (result) => {
+      console.log(result);
       this.checkRandomQuoteLength(result)
     })
   }
