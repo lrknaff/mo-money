@@ -266,7 +266,7 @@ export default class InputContainer extends Component {
           <button
             className="submit-button waves-effect"
             onClick={this.props.card ? () => this.editJob() : () => this.addJob()}
-            disabled={!(company && title && city && state && salary && bonus && retirement && insurance && distance)}
+            disabled={!(company && title && city && state && salary && bonus && insurance && distance)}
             type="button"
             aria-label="submit new job"
           > Submit </button>
