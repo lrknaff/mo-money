@@ -210,9 +210,9 @@ export default class InputContainer extends Component {
           </div>
 
           <div className="input-form-container">
-            <h6 htmlFor="lunch">Lunch</h6>
+            <h6 className="checkbox-label">Lunch</h6>
             <InputComponent
-              className="input-form-lunch"
+              className="input-form-beer-lunch"
               name="lunch"
               checked={lunch}
               type="checkbox"
@@ -222,9 +222,9 @@ export default class InputContainer extends Component {
           </div>
 
           <div className="input-form-container">
-            <h6 htmlFor="beer">Beer</h6>
+            <h6 className="checkbox-label">Beer</h6>
             <InputComponent
-              className="input-form-beer"
+              className="input-form-beer-lunch"
               name="beer"
               checked={beer}
               type="checkbox"
@@ -266,7 +266,7 @@ export default class InputContainer extends Component {
           <button
             className="submit-button waves-effect"
             onClick={this.props.card ? () => this.editJob() : () => this.addJob()}
-            disabled={!(company && title && city && state && salary && bonus && retirement && insurance && distance)}
+            disabled={!(company && title && city && state && salary && bonus && insurance && distance)}
             type="button"
             aria-label="submit new job"
           > Submit </button>

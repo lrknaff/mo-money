@@ -113,7 +113,7 @@ export default class CardComponent extends Component {
                 type="button"
               > Edit </button>
               <button
-                className="submit-button waves-effect"
+                className="remove-button waves-effect"
                 onClick={() => this.deleteJob()}
                 type="button"
               >Remove</button>
