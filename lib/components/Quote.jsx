@@ -5,20 +5,24 @@ export default class Quote extends Component {
   constructor() {
     super()
     this.state = {
+      // source: '',
       source: 'http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?',
-      randomQuote: {},
+      randomQuote: {
+        quoteText: 'The lack of money is the root of all evil',
+        quoteAuthor: 'Mark Twain',
+      },
     }
-    this.defaultQuote()
+    // this.defaultQuote()
     this.getRandomQuote()
   }
 
   getRandomQuote() {
     $.getJSON(this.state.source, (result) => {
-      if (result.quoteText.length > 1) {
+      // if (result.quoteText.length > 1) {
         this.checkRandomQuoteLength(result)
-      } else {
-        this.defaultQuote()
-      }
+      // } else {
+        // this.defaultQuote()
+      // }
     })
   }
 
@@ -30,14 +34,14 @@ export default class Quote extends Component {
     }
   }
 
-  defaultQuote() {
-    this.setState({
-      randomQuote: {
-        quoteText: 'The lack of money is the root of all evil',
-        quoteAuthor: 'Mark Twain',
-      },
-    })
-  }
+  // defaultQuote() {
+  //   this.setState({
+  //     randomQuote: {
+  //       quoteText: 'The lack of money is the root of all evil',
+  //       quoteAuthor: 'Mark Twain',
+  //     },
+  //   })
+  // }
 
   render() {
     return (
