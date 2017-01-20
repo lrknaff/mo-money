@@ -1,8 +1,5 @@
-# MoMoney 
-
-[MoMoney](https://mo-money-2f924.firebaseapp.com/)
-
-MoMoney is an application that will allow you to compare job offers based on income, benefits, and costs. The 'Adjusted' value indicates the amount that you will net after taxes and changes in cost of living with Denver being the baseline location.
+# MoMoney
+> MoMoney is an application that will allow you to compare job offers based on income, benefits, and costs. The 'Adjusted' value indicates the amount that you will net after taxes and changes in cost of living with Denver being the baseline location.
 
 ## Datasources
 
@@ -22,4 +19,13 @@ MoMoney is an application that will allow you to compare job offers based on inc
 * There are 40 hours in the work week
 * 48 weeks in the offce
 
+## Instructions
+'npm install'
+'npm start'
 
+## View
+[MoMoney](https://mo-money-2f924.firebaseapp.com/)
+
+
+## Work with me
+I'm always open to new opportunities (full-time, freelance and contract). Email me at lacey.knaff@gmail.com if you’re interested in working together.
